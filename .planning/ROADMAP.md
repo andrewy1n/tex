@@ -11,7 +11,7 @@ Establish a source-first LaTeX git workspace: predictable layout and README, TeX
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [x] **Phase 1: Repository layout & documentation** - Entry point, folder layout, `.gitignore`, and README onboarding (completed 2026-03-25)
-- [ ] **Phase 2: Repeatable local build** - One documented command produces the PDF on a fresh clone
+- [x] **Phase 2: Repeatable local build** - One documented command produces the PDF on a fresh clone (completed 2026-03-25)
 - [ ] **Phase 3: Agent & edit conventions** - Master file, build command, and automation expectations in one short doc
 
 ## Phase Details
@@ -40,7 +40,11 @@ Plans:
   1. README (or the same single place linked from README) documents exactly one primary command to build the PDF (e.g. `latexmk` or `make`).
   2. On a fresh clone with a typical local TeX install, running that command completes successfully and yields the expected PDF artifact.
   3. Build instructions mention working directory expectations if the command must be run from a specific folder.
-**Plans**: TBD
+**Plans**: 2/2 plans complete
+
+Plans:
+- [x] 02-01-PLAN.md — `.latexmkrc` + thin `Makefile`; verify `latexmk` produces `main.pdf` from repo root
+- [x] 02-02-PLAN.md — README **Build** section + `main.tex` pointer to README
 
 ### Phase 3: Agent & edit conventions
 **Goal**: Humans and coding agents share one explicit contract for what to compile, how to build, and how to edit safely.
@@ -60,5 +64,5 @@ Phases execute in numeric order: 1 → 2 → 3
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Repository layout & documentation | 3/3 | Complete | 2026-03-25 |
-| 2. Repeatable local build | 0/TBD | Not started | - |
+| 2. Repeatable local build | 2/2 | Complete | 2026-03-25 |
 | 3. Agent & edit conventions | 0/TBD | Not started | - |

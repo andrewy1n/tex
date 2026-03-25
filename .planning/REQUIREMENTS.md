@@ -14,7 +14,7 @@
 
 ### Build
 
-- [ ] **BLD-01**: User can produce the document PDF using one documented command (for example `latexmk` or `make`) on a fresh clone when a normal local TeX install is present
+- [x] **BLD-01**: User can produce the document PDF using one documented command (for example `latexmk` or `make`) on a fresh clone when a normal local TeX install is present
 
 ### Agents & conventions
 
@@ -51,7 +51,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REPO-02 | 1 | Complete |
 | REPO-03 | 1 | Complete |
 | REPO-04 | 1 | Complete |
-| BLD-01 | 2 | Pending |
+| BLD-01 | 2 | Complete |
 | AGT-01 | 3 | Pending |
 
 **Coverage:**
@@ -62,4 +62,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-03-25*  
-*Last updated: 2025-03-25 after roadmap creation*
+*Last updated: 2026-03-25 after Phase 2 complete*

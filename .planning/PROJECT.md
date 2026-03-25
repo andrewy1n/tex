@@ -15,10 +15,10 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 - [x] `.tex` sources (and related assets like `.bib`, figures, and class/style files) live in-repo with a layout that is easy to navigate — **Validated in Phase 1: Repository layout & documentation**
 - [x] You can open and edit any `.tex` file in Cursor/VS Code without leaving the repo — **Validated in Phase 1**
 - [x] Coding agents can read and modify project files as normal workspace files — **Validated in Phase 1**
+- [x] Light, repeatable local build (`.latexmkrc`, `Makefile`, documented `latexmk` in README); no CI requirement in v1 — **Validated in Phase 2: Repeatable local build**
 
 ### Active
 
-- [ ] Light, repeatable local build (script, `latexmk`, Makefile, and/or editor tasks); no requirement for CI in v1 — *Phase 2*
 - [ ] Short convention doc for master file + build + edit expectations — *Phase 3*
 
 ### Out of Scope
@@ -40,7 +40,7 @@ Personal or small-team LaTeX workspace. The aim is versioned sources plus editor
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1: layout + README + `.gitignore` done; build hooks in Phase 2 |
+| Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1: layout + README + `.gitignore`; Phase 2: `.latexmkrc`, `Makefile`, README **Build** |
 | No hosted replacement for Overleaf | Keeps scope to repo + editor + agents | — Pending |
 
 ## Evolution
@@ -63,4 +63,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 1 complete*
+*Last updated: 2026-03-25 after Phase 2 complete*
