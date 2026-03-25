@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Milestone complete
+status: v1.0 milestone complete
 stopped_at: Phase 3 context gathered
-last_updated: "2026-03-25T23:22:27.843Z"
+last_updated: "2026-03-25T23:25:32.512Z"
 progress:
   total_phases: 3
   completed_phases: 3
@@ -16,10 +16,10 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2025-03-25)
+See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when a PDF is needed.
-**Current focus:** Milestone v1.0 — all planned phases complete
+**Current focus:** v1.0 shipped — plan next milestone with `/gsd-new-milestone`
 
 ## Current Position
 
