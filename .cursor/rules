@@ -104,6 +104,8 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 Conventions not yet established. Will populate as patterns emerge during development.
 <!-- gsd-conventions-end -->
 
+<!-- tex-latex-agents: LaTeX source and automated-edit expectations live in AGENTS.md at the repository root. -->
+
 <!-- gsd-architecture-start source:ARCHITECTURE.md -->
 ## Architecture
 

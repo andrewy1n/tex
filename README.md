@@ -2,6 +2,10 @@
 
 Git-tracked LaTeX sources and assets—edit any `.tex` in Cursor/VS Code and use agents on the same tree; local compilation produces PDFs when needed.
 
+## Agents
+
+For **coding agents** and **automated edits**, see **[AGENTS.md](AGENTS.md)** at the repository root—it defines the master file, build references, and git hygiene expectations.
+
 ## Prerequisites
 
 Install a full TeX distribution (TeX Live, MacTeX, or MiKTeX) so `latexmk` and `pdflatex` are on your `PATH`. Official TeX Live: [https://www.tug.org/texlive/](https://www.tug.org/texlive/).
@@ -38,6 +42,7 @@ VS Code / Cursor users may install the **LaTeX Workshop** extension (`James-Yu.l
 
 ```
 .
+├── AGENTS.md          # conventions for humans and coding agents (master file, build pointer, git hygiene)
 ├── main.tex           # compile root (master document)
 ├── Makefile           # optional: `make pdf` → same latexmk invocation as below
 ├── .latexmkrc         # project latexmk defaults (pdflatex, nonstop build)

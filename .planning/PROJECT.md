@@ -16,10 +16,11 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 - [x] You can open and edit any `.tex` file in Cursor/VS Code without leaving the repo — **Validated in Phase 1**
 - [x] Coding agents can read and modify project files as normal workspace files — **Validated in Phase 1**
 - [x] Light, repeatable local build (`.latexmkrc`, `Makefile`, documented `latexmk` in README); no CI requirement in v1 — **Validated in Phase 2: Repeatable local build**
+- [x] Short convention doc for master file + build + edit expectations — **Validated in Phase 3: Agent & edit conventions** (`AGENTS.md`, README/`.cursor/rules` pointers)
 
 ### Active
 
-- [ ] Short convention doc for master file + build + edit expectations — *Phase 3*
+_(None — v1 milestone requirements validated.)_
 
 ### Out of Scope
 
@@ -47,7 +48,7 @@ Personal or small-team LaTeX workspace. The aim is versioned sources plus editor
 
 This document evolves at phase transitions and milestone boundaries.
 
-**After each phase transition** (via `/gsd-transition`):
+**After each phase transition** (when completing a phase and updating planning artifacts):
 
 1. Requirements invalidated? → Move to Out of Scope with reason
 2. Requirements validated? → Move to Validated with phase reference
@@ -63,4 +64,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 2 complete*
+*Last updated: 2026-03-25 after Phase 3 complete (v1 milestone)*

@@ -18,7 +18,7 @@
 
 ### Agents & conventions
 
-- [ ] **AGT-01**: A short convention document (dedicated `AGENTS.md` or a README section) specifies the master file, the build command, and expectations for automated edits (for example: do not commit aux files; preserve `%` line continuations)
+- [x] **AGT-01**: A short convention document (dedicated `AGENTS.md` or a README section) specifies the master file, the build command, and expectations for automated edits (for example: do not commit aux files; preserve `%` line continuations) — **Complete (Phase 3)**
 
 ## v2 Requirements
 
@@ -52,7 +52,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REPO-03 | 1 | Complete |
 | REPO-04 | 1 | Complete |
 | BLD-01 | 2 | Complete |
-| AGT-01 | 3 | Pending |
+| AGT-01 | 3 | Complete |
 
 **Coverage:**
 
@@ -62,4 +62,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2025-03-25*  
-*Last updated: 2026-03-25 after Phase 2 complete*
+*Last updated: 2026-03-25 after Phase 3 complete*

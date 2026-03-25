@@ -12,7 +12,7 @@ Establish a source-first LaTeX git workspace: predictable layout and README, TeX
 
 - [x] **Phase 1: Repository layout & documentation** - Entry point, folder layout, `.gitignore`, and README onboarding (completed 2026-03-25)
 - [x] **Phase 2: Repeatable local build** - One documented command produces the PDF on a fresh clone (completed 2026-03-25)
-- [ ] **Phase 3: Agent & edit conventions** - Master file, build command, and automation expectations in one short doc
+- [x] **Phase 3: Agent & edit conventions** - Master file, build command, and automation expectations in one short doc (completed 2026-03-25)
 
 ## Phase Details
 
@@ -54,7 +54,11 @@ Plans:
   1. A dedicated `AGENTS.md` or a clearly labeled README section states the master/root TeX file.
   2. That doc repeats the same build command (or points unambiguously to the README section that defines it).
   3. The doc states expectations for automated edits (e.g. do not commit auxiliary files; preserve `%` line continuations where relevant).
-**Plans**: TBD
+**Plans**: 2/2 plans complete
+
+Plans:
+- [x] 03-01-PLAN.md — Root **`AGENTS.md`**: master file, README **`## Build`** by reference, minimal git/edit expectations
+- [x] 03-02-PLAN.md — README + **`.cursor/rules`** pointers to **`AGENTS.md`**
 
 ## Progress
 
@@ -65,4 +69,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Repository layout & documentation | 3/3 | Complete | 2026-03-25 |
 | 2. Repeatable local build | 2/2 | Complete | 2026-03-25 |
-| 3. Agent & edit conventions | 0/TBD | Not started | - |
+| 3. Agent & edit conventions | 2/2 | Complete | 2026-03-25 |
