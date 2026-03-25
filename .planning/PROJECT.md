@@ -8,18 +8,18 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 
 **Any `.tex` in the repo is editable in the IDE and readable/writable by agents**, with a simple, shared way to compile when you need a PDF.
 
-## Current state (v1.0)
+## Current state (v1.1)
 
-**Shipped:** Milestone **v1.0 — IDE-first LaTeX repo** (2026-03-25): repo layout and onboarding README, TeX-oriented `.gitignore`, one documented `latexmk` / `make pdf` path from the repo root, and **`AGENTS.md`** plus README / **`.cursor/rules`** pointers for humans and coding agents. v1 requirements are archived in [`.planning/milestones/v1.0-REQUIREMENTS.md`](milestones/v1.0-REQUIREMENTS.md).
+**Shipped:** Milestone **v1.1 — Multi-project workspace & live PDF** (2026-03-25): `projects/<name>/` layout with **`PROJECTS.md`** index, per-project PDF ignore rules, and committed **`.vscode/`** LaTeX Workshop settings plus README workflow (**PRV-01**, **PRV-02**). v1.0 remains archived in [`.planning/milestones/v1.0-REQUIREMENTS.md`](milestones/v1.0-REQUIREMENTS.md).
 
-## Current Milestone: v1.1 Multi-project workspace & live PDF
+## Milestone v1.1 (complete)
 
 **Goal:** Support **several LaTeX projects in one repo** with clear layout and docs, and **live PDF viewing in a separate editor window/panel** (LaTeX Workshop) while editing sources.
 
-**Target features:**
+**Delivered:**
 
-- **Multi-project layout** — Directory convention (e.g. `projects/<name>/`), isolated PDF/aux outputs, project index, updated ignore rules and `AGENTS.md`.
-- **Live / split PDF preview** — Separate PDF tab or side view; PDF refreshes after build (auto-build on save and/or documented build workflow).
+- **Multi-project layout** — Directory convention (`projects/<name>/`), isolated PDF/aux outputs, project index, updated ignore rules and `AGENTS.md`.
+- **Live / split PDF preview** — Separate PDF tab; PDF refreshes after build (`onSave` in committed settings; documented `never` alternative).
 
 **Key context:** Still **not** a hosted Overleaf replacement; all editing stays in Cursor/VS Code + local TeX. Research: [`.planning/research/SUMMARY.md`](research/SUMMARY.md).
 
@@ -36,10 +36,11 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 - [x] **Isolated PDF outputs** per project path and ignore rules — **Validated in Phase 4**
 - [x] **Project index** (`PROJECTS.md` + README) with master paths and build lines — **Validated in Phase 4**
 - [x] **Per-project artifact policy** in `.gitignore` and `AGENTS.md` — **Validated in Phase 4**
+- [x] **Committed + documented LaTeX Workshop PDF preview** (tab viewer, onSave / manual build, `% !TEX root` for partials, WSL/remote notes) — **Validated in Phase 5: Live PDF preview**
 
 ### Active
 
-- **Live PDF preview** (PRV-01, PRV-02) — Phase 5
+- None (v1.1 requirements complete)
 
 ### Out of Scope
 
@@ -84,4 +85,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 — Phase 4 complete; PRJ-01–PRJ-04 validated*
+*Last updated: 2026-03-25 — Phase 5 complete; PRV-01–PRV-02 validated; v1.1 milestone shipped*

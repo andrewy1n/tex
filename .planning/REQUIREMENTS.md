@@ -15,8 +15,8 @@
 
 ### Live PDF preview (editor)
 
-- [ ] **PRV-01**: **Documented and/or committed editor configuration** so the user can open the **built PDF in a separate view** (e.g. editor tab or side panel — not only viewing PDF inside the same buffer as source).
-- [ ] **PRV-02**: **Documented workflow** so the PDF **updates after a build** (e.g. auto-build on save and/or explicit build + viewer refresh), appropriate for this repo’s multi-project layout.
+- [x] **PRV-01**: **Documented and/or committed editor configuration** so the user can open the **built PDF in a separate view** (e.g. editor tab or side panel — not only viewing PDF inside the same buffer as source). — **Done in Phase 5**
+- [x] **PRV-02**: **Documented workflow** so the PDF **updates after a build** (e.g. auto-build on save and/or explicit build + viewer refresh), appropriate for this repo’s multi-project layout. — **Done in Phase 5**
 
 ## Future (after v1.1)
 
@@ -46,8 +46,8 @@
 | PRJ-02 | 4 | Complete |
 | PRJ-03 | 4 | Complete |
 | PRJ-04 | 4 | Complete |
-| PRV-01 | 5 | Pending |
-| PRV-02 | 5 | Pending |
+| PRV-01 | 5 | Complete |
+| PRV-02 | 5 | Complete |
 
 **Coverage:**
 
@@ -57,4 +57,4 @@
 
 ---
 *Requirements defined: 2026-03-25*  
-*Last updated: 2026-03-25 — PRJ-01–PRJ-04 validated after Phase 4*
+*Last updated: 2026-03-25 — PRV-01–PRV-02 validated after Phase 5*
