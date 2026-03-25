@@ -4,7 +4,7 @@ Git-tracked LaTeX sources and assets—edit any `.tex` in Cursor/VS Code and use
 
 ## Agents
 
-For **coding agents** and **automated edits**, see **[AGENTS.md](AGENTS.md)** at the repository root—it defines the master file, build references, and git hygiene expectations.
+For **coding agents** and **automated edits**, see **[AGENTS.md](AGENTS.md)** at the repository root—it defines compile roots, build references, and git hygiene expectations.
 
 ## Prerequisites
 
@@ -12,15 +12,17 @@ Install a full TeX distribution (TeX Live, MacTeX, or MiKTeX) so `latexmk` and `
 
 ## Build
 
-From the **repository root** (the directory that contains `main.tex`):
+Work from the **repository root** (the directory that contains `README.md`, `Makefile`, and `.latexmkrc`).
 
-**Primary command:**
+LaTeX projects live under **`projects/<name>/`**, each with its own **`main.tex`**. **Per-project commands** (master paths and copy-paste `latexmk` lines) are listed in **[PROJECTS.md](PROJECTS.md)**.
+
+**Example — `sample` project:**
 
 ```bash
-latexmk -pdf -interaction=nonstopmode -file-line-error main.tex
+latexmk -pdf -interaction=nonstopmode -file-line-error projects/sample/main.tex
 ```
 
-This uses the committed **`.latexmkrc`** for consistent `pdflatex` settings. Output is **`main.pdf`** next to `main.tex` (ignored by `.gitignore`).
+This uses the committed **`.latexmkrc`** for consistent `pdflatex` settings. Output is **`projects/sample/main.pdf`** next to that project’s `main.tex` (ignored by `.gitignore`).
 
 If you have `make`, the same recipe is available as:
 
@@ -32,31 +34,39 @@ See the **`Makefile`** at the repo root.
 
 ## Main file (compile root)
 
-The primary LaTeX entry is **`main.tex`** at the repository root. See **[Build](#build)** above.
+There is **no** single master at the repository root. Each project has a master under **`projects/<name>/main.tex`**; the **`sample`** project uses **`projects/sample/main.tex`**. See **[PROJECTS.md](PROJECTS.md)** for the full list.
 
 ## Editor (optional)
 
-VS Code / Cursor users may install the **LaTeX Workshop** extension (`James-Yu.latex-workshop`) for integrated editing—no settings are required for this repo.
+VS Code / Cursor users may install the **LaTeX Workshop** extension (`James-Yu.latex-workshop`) for integrated editing—Phase 5 documents PDF preview settings for multi-project layouts.
 
 ## Repository layout
 
 ```
 .
-├── AGENTS.md          # conventions for humans and coding agents (master file, build pointer, git hygiene)
-├── main.tex           # compile root (master document)
-├── Makefile           # optional: `make pdf` → same latexmk invocation as below
+├── AGENTS.md          # conventions for humans and coding agents (compile roots, build pointers, git hygiene)
+├── PROJECTS.md        # canonical list of projects, master paths, and build commands
+├── Makefile           # optional: `make pdf` → latexmk for the sample project
 ├── .latexmkrc         # project latexmk defaults (pdflatex, nonstop build)
 ├── README.md
 ├── .gitignore
-├── figures/           # images and figure PDFs (source assets)
-├── bib/
-│   └── references.bib
-└── sections/          # optional \\input / \\include partials
+└── projects/
+    └── sample/
+        ├── main.tex   # compile root for the sample project
+        ├── figures/   # images and figure PDFs (source assets)
+        ├── bib/
+        │   └── references.bib
+        └── sections/  # optional \input / \include partials
 ```
 
 ## What we track vs ignore
 
-- **Tracked:** `.tex` sources, `.bib` bibliography files, figure sources (e.g. `.png`, `.eps`, and PDFs under `figures/` when they are intentional assets).
-- **Ignored:** LaTeX auxiliary files (`.aux`, `.log`, `.out`, `.synctex.gz`, and related patterns from the GitHub TeX baseline) and **root** `main.pdf` build output next to `main.tex`.
+- **Tracked:** `.tex` sources, `.bib` bibliography files, figure sources (e.g. `.png`, `.eps`, and PDFs under each project’s `figures/` when they are intentional assets).
+- **Ignored:** LaTeX auxiliary files (`.aux`, `.log`, `.out`, `.synctex.gz`, and related patterns from the GitHub TeX baseline), **root** `main.pdf` if produced at the repository root, and **per-project** `main.pdf` files under **`projects/`** (for example `projects/sample/main.pdf`).
 
-Full pattern details are in `.gitignore` (upstream TeX template plus small project overrides).
+Full pattern details are in `.gitignore` (upstream TeX template plus project overrides).
+</think>
+
+
+<｜tool▁calls▁begin｜><｜tool▁call▁begin｜>
+StrReplace
