@@ -7,10 +7,10 @@
 
 ### Repository & layout
 
-- [ ] **REPO-01**: User can determine which file to compile from the README or from a single obvious root `.tex` (or a documented `% !TeX root` convention for multi-file projects)
-- [ ] **REPO-02**: `.tex` sources, figures, and bibliography inputs live in a predictable folder layout described in the README
-- [ ] **REPO-03**: A TeX-oriented `.gitignore` excludes auxiliary and log files; the repo documents whether PDFs or other generated artifacts are tracked or ignored
-- [ ] **REPO-04**: README states local prerequisites (e.g. TeX distribution), names the main TeX file, and summarizes the directory layout
+- [x] **REPO-01**: User can determine which file to compile from the README or from a single obvious root `.tex` (or a documented `% !TeX root` convention for multi-file projects)
+- [x] **REPO-02**: `.tex` sources, figures, and bibliography inputs live in a predictable folder layout described in the README
+- [x] **REPO-03**: A TeX-oriented `.gitignore` excludes auxiliary and log files; the repo documents whether PDFs or other generated artifacts are tracked or ignored
+- [x] **REPO-04**: README states local prerequisites (e.g. TeX distribution), names the main TeX file, and summarizes the directory layout
 
 ### Build
 
@@ -47,10 +47,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REPO-01 | 1 | Pending |
-| REPO-02 | 1 | Pending |
-| REPO-03 | 1 | Pending |
-| REPO-04 | 1 | Pending |
+| REPO-01 | 1 | Complete |
+| REPO-02 | 1 | Complete |
+| REPO-03 | 1 | Complete |
+| REPO-04 | 1 | Complete |
 | BLD-01 | 2 | Pending |
 | AGT-01 | 3 | Pending |
 
