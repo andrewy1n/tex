@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: — Multi-project workspace & live PDF
-status: Ready to plan
+status: Executing Phase 05
 stopped_at: Phase 5 context gathered
-last_updated: "2026-03-25T23:43:08.085Z"
+last_updated: "2026-03-25T23:46:51.511Z"
 progress:
   total_phases: 2
   completed_phases: 1
-  total_plans: 2
+  total_plans: 4
   completed_plans: 2
 ---
 
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects and split PDF preview in v1.1.
-**Current focus:** Phase 5 — live PDF preview
+**Current focus:** Phase 05 — live-pdf-preview
 
 ## Current Position
 
-Phase: 5
-Plan: Not started
+Phase: 05 (live-pdf-preview) — EXECUTING
+Plan: 1 of 2
 
 ## Performance Metrics
 
