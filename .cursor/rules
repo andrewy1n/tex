@@ -1,0 +1,133 @@
+<!-- gsd-project-start source:PROJECT.md -->
+## Project
+
+**tex**
+
+A git repository for LaTeX (`.tex`) sources and supporting files—organized so you can open and edit any file in Cursor/VS Code and give coding agents direct access to the same tree. Light build hooks (for example Makefile, `latexmk`, or editor tasks) keep local builds repeatable without turning this into a hosted editor.
+
+**Core Value:** **Any `.tex` in the repo is editable in the IDE and readable/writable by agents**, with a simple, shared way to compile when you need a PDF.
+
+### Constraints
+
+- **Editor**: Cursor/VS Code — assume normal file-based editing
+- **Build**: Local TeX toolchain (`latexmk`, `pdflatex`, etc.) on the machine
+<!-- gsd-project-end -->
+
+<!-- gsd-stack-start source:research/STACK.md -->
+## Technology Stack
+
+## Recommended Stack
+### Core Technologies
+| Technology | Version | Purpose | Why Recommended |
+|------------|---------|---------|-----------------|
+| **TeX Live** | **2025** (annual release; shipped March 2025 per TUG calendar and community release notes) | Full TeX/LaTeX system (`pdflatex`, `lualatex`, `xelatex`, `biber`, `bibtex`, packages, fonts) | De facto standard on Linux and in academia; same package set and layout across machines; `tlmgr` for reproducible updates; TUG documents Windows/macOS/Unix support and 64-bit Windows layout under `bin/windows`. **Confidence: HIGH** — [TeX Live](https://www.tug.org/texlive/), [TeX Live guide / news](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html). |
+| **MacTeX** | **2025** (bundles TeX Live 2025) | macOS distribution of TeX Live + mac utilities | Official macOS path recommended by TUG; avoids mixing random MacPorts/Homebrew TeX fragments. **Confidence: HIGH** — [MacTeX](https://www.tug.org/mactex/). |
+| **latexmk** | Ships with TeX Live / MiKTeX; CTAN line evolves (check `latexmk -v`) | One command drives multi-pass builds (LaTeX, BibTeX/Biber, indices), optional watch mode | Community and editor extensions assume it; eliminates hand-ordered `pdflatex` loops; continuous preview mode matches IDE workflows. **Confidence: HIGH** — [CTAN: latexmk](https://ctan.org/pkg/latexmk). |
+| **LaTeX Workshop** | VS Code Marketplace: `James-Yu.latex-workshop` (extension updates continuously; pin in team docs if needed) | Syntax, build recipes (defaults to `latexmk`), PDF view, SyncTeX, citations | Dominant VS Code/Cursor integration; explicitly recommends TeX Live and documents WSL, PATH, and MiKTeX+Perl constraints. **Confidence: HIGH** — [Install wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install), [Marketplace](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop). |
+### Supporting Libraries / Programs
+| Library / tool | Version | Purpose | When to Use |
+|----------------|---------|---------|-------------|
+| **Biber** | With TeX Live 2025 | Bibliography processor for `biblatex` | Modern bibliographies; prefer over plain `bibtex` when using `biblatex`. **Confidence: HIGH** (part of TL). |
+| **BibTeX** | With TeX Live 2025 | Classic `.bib` + `\bibliography{}` | Legacy templates and many journal classes. **Confidence: HIGH**. |
+| **ChkTeX** | Distro package or `tlmgr` | Linting | Optional; LaTeX Workshop can integrate it. **Confidence: MEDIUM** — [LaTeX Workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install). |
+| **latexindent** | Distro or CPAN/Perl install | Formatting | Optional; needed if you want format-on-save style behavior beyond built-in formatting. **Confidence: MEDIUM** — [LaTeX Workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install). |
+| **SyncTeX** | Enabled by default in usual engines | PDF ↔ source navigation | Use `-synctex=1` (often default via `latexmk`); improves edit-preview loop in the extension. **Confidence: HIGH**. |
+### Development Tools
+| Tool | Purpose | Notes |
+|------|---------|-------|
+| **`tlmgr`** | Install/update TeX packages | Keeps two checkouts aligned; document any `tlmgr install …` in README for rare packages. |
+| **`install-tl` / `install-tl-windows`** | Net install of TeX Live | Prefer over stale distro packages when you need the current-year tree. **Confidence: HIGH** — [quick install](https://www.tug.org/texlive/quickinstall.html). |
+| **`.latexmkrc`** (repo or home) | Engine flags, `$pdf_mode`, custom deps | Single source of truth for CLI + LaTeX Workshop if recipes stay default. |
+| **`Makefile` or `tasks.json`** | One-shot `make pdf` / agent-friendly commands | Thin wrapper around `latexmk -pdf -interaction=nonstopmode -halt-on-error main` improves repeatability for humans and agents. |
+| **`.vscode/settings.json`** | Project-local tool paths | Use when PATH in the IDE host differs from the shell (common with Remote-WSL/SSH). **Confidence: HIGH** — [LaTeX Workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install). |
+## Installation
+### TeX Live (Linux / WSL — recommended for this repo’s constraints)
+# Example: after downloading install-tl-unx.tar.gz from https://www.tug.org/texlive/acquire-netinstall.html
+# tar -xzf install-tl-unx.tar.gz && cd install-tl-* && sudo ./install-tl
+# Put TeX binaries on PATH (typical Linux full install; adjust if you used a custom prefix)
+# Reload shell, then verify
+# Update packages later (user-specific or admin depending on install)
+### latexmk usage (repeatable builds)
+# One-shot PDF (from project root)
+# Watch mode (local iterative editing)
+### Editor extension (Cursor / VS Code)
+### MiKTeX (alternative — especially Windows)
+# Windows: run the current Basic or Net installer from https://miktex.org/download
+# Example filename pattern as of late 2025 on MiKTeX site: basic-miktex-25.12-x64.exe (verify on download page)
+# Linux (Debian/Ubuntu family): follow MiKTeX’s apt repo instructions, then finish setup
+# sudo apt-get install miktex
+# miktexsetup finish   # or shared install per https://miktex.org/download
+## Alternatives Considered
+| Recommended | Alternative | When to Use Alternative |
+|-------------|-------------|-------------------------|
+| TeX Live | **MiKTeX** | Smaller disk footprint, on-the-fly package install, strong Windows UX; accept Perl + possible recipe tuning for editors. **Confidence: HIGH** — [MiKTeX](https://miktex.org/), [MiKTeX vs TeX Live FAQ](https://miktex.org/faq/miktex-and-texlive). |
+| TeX Live full / scheme-full | **TinyTeX** | R/knitr-heavy workflows or minimal CI images; add packages via `tlmgr`; note LaTeX Workshop doc hover limitations without local docs. **Confidence: MEDIUM** — [LaTeX Workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install), [TinyTeX](https://yihui.org/tinytex/). |
+| latexmk | **arara**, **latexmk**-free recipes | Multi-language builds or explicit YAML-driven pipelines; more setup per project. **Confidence: MEDIUM** — [CTAN: arara](https://ctan.org/pkg/arara). |
+| LaTeX Workshop | **TeXLab** (LSP) + separate PDF viewer | If you want a Rust LSP server and lighter extension composition; more assembly required. **Confidence: LOW** — ecosystem choice, verify current extension IDs before standardizing. |
+## What NOT to Use
+| Avoid | Why | Use Instead |
+|-------|-----|-------------|
+| **Relying on Overleaf as the primary compiler** for a git-first IDE repo | Diverges from PROJECT.md (no hosted editor); agents and local builds won’t match without export discipline | Local TeX Live + `latexmk`; optional Overleaf only as collaboration, not source of truth. |
+| **Committing generated PDFs, `.aux`, `.log`, `.synctex.gz` by default** | Merge noise, nondeterministic outputs, binary churn | `.gitignore` build products; CI can build artifacts when you add it later. |
+| **Hand-run single-pass `pdflatex` in docs/scripts** | Misses bib/TOC/cross-refs; flaky for newcomers | `latexmk` or a Makefile that calls it. |
+| **MiKTeX without Perl** (if using default LaTeX Workshop recipes) | `latexmk` fails; “build broken” reports | Install Perl or custom non-latexmk recipes. **Confidence: HIGH** — [LaTeX Workshop wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install). |
+| **Mixing TeX Live and MiKTeX on PATH** | Unpredictable which `kpsewhich` / format wins | One distribution per machine profile; verify `which pdflatex`. **Confidence: MEDIUM** — [MiKTeX FAQ](https://miktex.org/faq/miktex-and-texlive). |
+## Stack Patterns by Variant
+- Use **TeX Live 2025** from TUG or an up-to-date distro metapackage.  
+- Because paths and `tlmgr` behavior match most tutorials and server environments.
+- Use **MacTeX 2025** (or BasicTeX + `tlmgr` for minimal installs).  
+- Because it is the supported bundle and reduces “works on my Mac” package drift.
+- Prefer **TeX Live** or **MiKTeX** with documented Perl requirement when using LaTeX Workshop defaults.  
+- Because both are maintained; MiKTeX’s smaller install is attractive if Perl is installed.
+- Use **TinyTeX** or a **Docker** image invoked from `tasks.json` / `make`.  
+- Because PROJECT.md allows “their own local TeX” but you still need a documented build container for shared repeatability.
+## Version Compatibility
+| Component A | Compatible With | Notes |
+|-------------|-----------------|-------|
+| LaTeX Workshop default recipe | `latexmk` + Perl (MiKTeX) or bundled `latexmk` (TeX Live) | Failure mode: “latexmk not found” or Perl errors — fix PATH or Perl. **Confidence: HIGH** |
+| `biblatex` | **Biber** (not always BibTeX) | Mismatched backend → empty bibliography; set in `.latexmkrc` or document class options. **Confidence: HIGH** |
+| TeX Live **year** N | Packages frozen until `tlmgr update` | Pin “we target TL2025” in README so `tlmgr` upgrades are conscious, not accidental. **Confidence: HIGH** |
+## Sources
+- [TeX Live (TUG)](https://www.tug.org/texlive/) — distribution scope, platforms, acquire links. **HIGH**
+- [TeX Live English manual / news](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#news) — release highlights, Windows `bin/windows`, MacTeX-2025 notes. **HIGH**
+- [TeX Live quick install](https://www.tug.org/texlive/quickinstall.html) — Unix install and PATH. **HIGH**
+- [CTAN: latexmk](https://ctan.org/pkg/latexmk) — role, inclusion in TeX Live/MiKTeX. **HIGH**
+- [LaTeX Workshop — Installation and basic settings](https://github.com/James-Yu/LaTeX-Workshop/wiki/Install) — TeX Live preference, TinyTeX/MiKTeX/Perl, PATH, WSL. **HIGH**
+- [Visual Studio Marketplace — LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) — extension ID. **HIGH**
+- [MiKTeX download / Linux setup](https://miktex.org/download) — installers, `miktexsetup`, coexistence FAQ. **HIGH**
+- [TeX Live 2025 released (community summary)](https://tex-talk.net/2025/03/texlive-2025/) — release timing / highlights (verify against TUG if precision required). **MEDIUM**
+<!-- gsd-stack-end -->
+
+<!-- gsd-conventions-start source:CONVENTIONS.md -->
+## Conventions
+
+Conventions not yet established. Will populate as patterns emerge during development.
+<!-- gsd-conventions-end -->
+
+<!-- gsd-architecture-start source:ARCHITECTURE.md -->
+## Architecture
+
+Architecture not yet mapped. Follow existing patterns found in the codebase.
+<!-- gsd-architecture-end -->
+
+<!-- gsd-workflow-start source:GSD defaults -->
+## GSD Workflow Enforcement
+
+Before using Edit, Write, or other file-changing tools, start work through a GSD command so planning artifacts and execution context stay in sync.
+
+Use these entry points:
+- `/gsd-quick` for small fixes, doc updates, and ad-hoc tasks
+- `/gsd-debug` for investigation and bug fixing
+- `/gsd-execute-phase` for planned phase work
+
+Do not make direct repo edits outside a GSD workflow unless the user explicitly asks to bypass it.
+<!-- gsd-workflow-end -->
+
+
+
+<!-- gsd-profile-start -->
+## Developer Profile
+
+> Profile not yet configured. Run `/gsd-profile-user` to generate your developer profile.
+> This section is managed by `generate-claude-profile` -- do not edit manually.
+<!-- gsd-profile-end -->

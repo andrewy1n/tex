@@ -47,19 +47,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REPO-01 | — | Pending |
-| REPO-02 | — | Pending |
-| REPO-03 | — | Pending |
-| REPO-04 | — | Pending |
-| BLD-01 | — | Pending |
-| AGT-01 | — | Pending |
+| REPO-01 | 1 | Pending |
+| REPO-02 | 1 | Pending |
+| REPO-03 | 1 | Pending |
+| REPO-04 | 1 | Pending |
+| BLD-01 | 2 | Pending |
+| AGT-01 | 3 | Pending |
 
 **Coverage:**
 
 - v1 requirements: 6 total  
-- Mapped to phases: 0 (pending roadmap)  
-- Unmapped: 6 ⚠️
+- Mapped to phases: 6  
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2025-03-25*  
-*Last updated: 2025-03-25 after research synthesis*
+*Last updated: 2025-03-25 after roadmap creation*
