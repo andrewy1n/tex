@@ -53,5 +53,3 @@ No gaps found. Phase goal achieved.
 - [x] `test -f PROJECTS.md && grep -q 'latexmk -pdf' PROJECTS.md`
 - [x] `grep -q 'PROJECTS.md' README.md && grep -q 'projects/' README.md && grep -q '## Build' README.md`
 - [x] `grep -q 'projects/' AGENTS.md && grep -qi 'PROJECTS.md\|README' AGENTS.md && grep -qi 'main.pdf' AGENTS.md`
-
-## Self-Check: PASSED
