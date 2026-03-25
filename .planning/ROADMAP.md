@@ -46,7 +46,12 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 2. **Documented workflow** for **refreshing** the PDF after build (e.g. auto-build on save, or build shortcut + viewer update) for the multi-project layout.
 3. Optional: **SyncTeX** forward/inverse search called out if enabled — not mandatory for “done.”
 
-**Plans:** TBD
+**Plans:** 2 plans (2 waves) — 2026-03-25
+
+Plans:
+
+- [ ] `05-live-pdf-preview-01-PLAN.md` — Commit `.vscode/extensions.json` + `.vscode/settings.json` (LaTeX Workshop: tab PDF, onSave, workspace-folder `latexmk`, root globs)
+- [ ] `05-live-pdf-preview-02-PLAN.md` — README LaTeX Workshop section + Makefile / PROJECTS.md cross-links (workflow, `% !TEX root`, SyncTeX optional, WSL or remote)
 
 ---
 
@@ -69,4 +74,4 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 | 2. Repeatable local build | v1.0 | 2/2 | Complete | 2026-03-25 |
 | 3. Agent & edit conventions | v1.0 | 2/2 | Complete | 2026-03-25 |
 | 4. Multi-project layout & index | v1.1 | 2/2 | Complete | 2026-03-25 |
-| 5. Live PDF preview | v1.1 | 0/TBD | Not started | — |
+| 5. Live PDF preview | v1.1 | 0/2 | Not started | — |
