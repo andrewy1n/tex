@@ -326,3 +326,7 @@ TSWLatexianTemp*
 #*Notes.bib
 
 # --- project overrides (tex workspace) ---
+# Root main.pdf is pdflatex/latexmk output next to main.tex — do not commit (D-04).
+/main.pdf
+# If a broad *.pdf rule is enabled above, PDFs under figures/ remain trackable as source assets (D-05):
+!figures/**/*.pdf
