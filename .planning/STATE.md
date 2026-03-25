@@ -19,7 +19,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects and split PDF preview in v1.1.
-**Current focus:** Phase 04 — multi-project-layout-index
+**Current focus:** Phase 5 — live PDF preview
 
 ## Current Position
 
