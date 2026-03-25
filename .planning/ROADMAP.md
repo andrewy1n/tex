@@ -7,11 +7,11 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 ## Milestones
 
 - ✅ **v1.0 — IDE-first LaTeX repo** — Phases 1–3 ([snapshot](milestones/v1.0-ROADMAP.md), shipped 2026-03-25)
-- 🚧 **v1.1 — Multi-project workspace & live PDF** — Phases 4–5 (in progress)
+- ✅ **v1.1 — Multi-project workspace & live PDF** — Phases 4–5 (shipped 2026-03-25)
 
 ## Current work
 
-**v1.1** — Define and ship multi-project layout, then LaTeX Workshop–based PDF preview and refresh workflow.
+**v1.1 shipped** — Multi-project layout, `PROJECTS.md`, committed `.vscode/` LaTeX Workshop settings, and README workflow for PDF preview and refresh.
 
 ## Phases (v1.1)
 
@@ -46,12 +46,12 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 2. **Documented workflow** for **refreshing** the PDF after build (e.g. auto-build on save, or build shortcut + viewer update) for the multi-project layout.
 3. Optional: **SyncTeX** forward/inverse search called out if enabled — not mandatory for “done.”
 
-**Plans:** 2 plans (2 waves) — 2026-03-25
+**Plans:** 2/2 complete — 2026-03-25
 
 Plans:
 
-- [ ] `05-live-pdf-preview-01-PLAN.md` — Commit `.vscode/extensions.json` + `.vscode/settings.json` (LaTeX Workshop: tab PDF, onSave, workspace-folder `latexmk`, root globs)
-- [ ] `05-live-pdf-preview-02-PLAN.md` — README LaTeX Workshop section + Makefile / PROJECTS.md cross-links (workflow, `% !TEX root`, SyncTeX optional, WSL or remote)
+- [x] `05-live-pdf-preview-01-PLAN.md` — Commit `.vscode/extensions.json` + `.vscode/settings.json` (LaTeX Workshop: tab PDF, onSave, workspace-folder `latexmk`, root globs)
+- [x] `05-live-pdf-preview-02-PLAN.md` — README LaTeX Workshop section + Makefile / PROJECTS.md cross-links (workflow, `% !TEX root`, SyncTeX optional, WSL or remote)
 
 ---
 
@@ -74,4 +74,4 @@ Plans:
 | 2. Repeatable local build | v1.0 | 2/2 | Complete | 2026-03-25 |
 | 3. Agent & edit conventions | v1.0 | 2/2 | Complete | 2026-03-25 |
 | 4. Multi-project layout & index | v1.1 | 2/2 | Complete | 2026-03-25 |
-| 5. Live PDF preview | v1.1 | 0/2 | Not started | — |
+| 5. Live PDF preview | v1.1 | 2/2 | Complete | 2026-03-25 |
