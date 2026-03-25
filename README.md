@@ -36,9 +36,36 @@ See the **`Makefile`** at the repo root.
 
 There is **no** single master at the repository root. Each project has a master under **`projects/<name>/main.tex`**; the **`sample`** project uses **`projects/sample/main.tex`**. See **[PROJECTS.md](PROJECTS.md)** for the full list.
 
-## Editor (optional)
+## LaTeX Workshop (PDF preview)
 
-VS Code / Cursor users may install the **LaTeX Workshop** extension (`James-Yu.latex-workshop`) for integrated editing—Phase 5 documents PDF preview settings for multi-project layouts.
+Open the **repository root** (the folder that contains this `README.md`, `Makefile`, and `.latexmkrc`) as the workspace folder in VS Code or Cursor. LaTeX Workshop discovers TeX roots from that cwd; committed settings under **`.vscode/settings.json`** recommend the **LaTeX Workshop** extension via **`.vscode/extensions.json`** (**D-02**).
+
+The following **exact setting keys** appear in committed config and are repeated here so you can search this document:
+
+- `latex-workshop.view.pdf.viewer`
+- `latex-workshop.latex.autoBuild.run`
+- `latex-workshop.latex.build.fromWorkspaceFolder`
+- `latex-workshop.latex.search.rootFiles.include`
+
+**Auto-build default:** the repo sets `latex-workshop.latex.autoBuild.run` to **`onSave`** (**D-03**). Saving a `.tex` file triggers `latexmk` via the configured recipe; after a successful build, the PDF tab refreshes.
+
+**Manual builds:** if you want **no** auto-build, set `latex-workshop.latex.autoBuild.run` to **`never`** and use LaTeX Workshop’s **Build LaTeX project** command or your own keybinding instead (**D-03**).
+
+**Partials:** when you edit a file under `projects/sample/sections/`, add a root directive so LaTeX Workshop knows which `main.tex` to build. The path is relative from the partial to the project master:
+
+```tex
+% !TEX root = ../main.tex
+```
+
+This matches the layout where partials live next to `projects/sample/main.tex` (**D-04**). For commands and paths, **[PROJECTS.md](PROJECTS.md)** remains the canonical reference for `latexmk` lines.
+
+### SyncTeX (optional)
+
+Forward and inverse search (click-from-source / click-from-PDF) work when SyncTeX is enabled by your build and supported by LaTeX Workshop; details depend on your viewer and OS. This repo does not guarantee the same SyncTeX behavior if you switch to an external PDF viewer (**D-05**). Enable **synctex** in your TeX toolchain if you rely on source↔PDF navigation.
+
+### WSL or remote
+
+Use the same rule: open the **repository root** in the editor and ensure **`latexmk`** and your TeX programs are on **`PATH`** in that environment. If the internal PDF viewer misbehaves (common in some remote or WSL setups), set `latex-workshop.view.pdf.viewer` to **`external`** and use your system PDF viewer (**D-06**).
 
 ## Repository layout
 
@@ -50,6 +77,9 @@ VS Code / Cursor users may install the **LaTeX Workshop** extension (`James-Yu.l
 ├── .latexmkrc         # project latexmk defaults (pdflatex, nonstop build)
 ├── README.md
 ├── .gitignore
+├── .vscode/
+│   ├── settings.json  # LaTeX Workshop workspace settings (viewer, build, recipes)
+│   └── extensions.json # recommends James-Yu.latex-workshop
 └── projects/
     └── sample/
         ├── main.tex   # compile root for the sample project
