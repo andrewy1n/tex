@@ -328,5 +328,9 @@ TSWLatexianTemp*
 # --- project overrides (tex workspace) ---
 # Root main.pdf is pdflatex/latexmk output next to main.tex — do not commit (D-04).
 /main.pdf
+# Per-project colocated PDFs (D-26): each projects/<name>/main.pdf is build output.
+projects/**/main.pdf
+# Intentional figure PDFs under each project remain trackable (D-26).
+!projects/**/figures/**/*.pdf
 # If a broad *.pdf rule is enabled above, PDFs under figures/ remain trackable as source assets (D-05):
 !figures/**/*.pdf
