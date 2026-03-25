@@ -10,7 +10,7 @@ Establish a source-first LaTeX git workspace: predictable layout and README, TeX
 - Integer phases (1, 2, 3): Planned milestone work
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
-- [ ] **Phase 1: Repository layout & documentation** - Entry point, folder layout, `.gitignore`, and README onboarding
+- [x] **Phase 1: Repository layout & documentation** - Entry point, folder layout, `.gitignore`, and README onboarding (completed 2026-03-25)
 - [ ] **Phase 2: Repeatable local build** - One documented command produces the PDF on a fresh clone
 - [ ] **Phase 3: Agent & edit conventions** - Master file, build command, and automation expectations in one short doc
 
@@ -25,12 +25,12 @@ Establish a source-first LaTeX git workspace: predictable layout and README, TeX
   2. `.tex` sources, figures, and bibliography inputs sit in a predictable layout that the README describes.
   3. A TeX-oriented `.gitignore` excludes auxiliary and log files; the README states whether PDFs and other generated artifacts are tracked or ignored.
   4. README lists local prerequisites (e.g. TeX distribution), names the main TeX file, and summarizes the directory layout.
-**Plans**: 3 plans
+**Plans**: 3/3 plans complete
 
 Plans:
-- [ ] 01-01-PLAN.md — Repository skeleton, `main.tex` at root, `figures/`, `bib/references.bib`, `sections/`
-- [ ] 01-02-PLAN.md — GitHub `TeX.gitignore` baseline + project PDF / `figures/` overrides
-- [ ] 01-03-PLAN.md — README: prerequisites, main file, layout tree, artifact track/ignore policy
+- [x] 01-01-PLAN.md — Repository skeleton, `main.tex` at root, `figures/`, `bib/references.bib`, `sections/`
+- [x] 01-02-PLAN.md — GitHub `TeX.gitignore` baseline + project PDF / `figures/` overrides
+- [x] 01-03-PLAN.md — README: prerequisites, main file, layout tree, artifact track/ignore policy
 
 ### Phase 2: Repeatable local build
 **Goal**: The documented build path works from a clean clone when a normal local TeX toolchain is installed.
@@ -59,6 +59,6 @@ Phases execute in numeric order: 1 → 2 → 3
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Repository layout & documentation | 0/3 | Not started | - |
+| 1. Repository layout & documentation | 3/3 | Complete | 2026-03-25 |
 | 2. Repeatable local build | 0/TBD | Not started | - |
 | 3. Agent & edit conventions | 0/TBD | Not started | - |
