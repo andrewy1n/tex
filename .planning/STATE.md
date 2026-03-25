@@ -2,15 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: — Multi-project workspace & live PDF
-status: planning
+status: Ready to plan
 stopped_at: Phase 4 context gathered
-last_updated: "2026-03-25T23:34:53.785Z"
-last_activity: 2026-03-25 — Milestone v1.1 initialized
+last_updated: "2026-03-25T23:38:48.662Z"
 progress:
   total_phases: 2
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  completed_phases: 1
+  total_plans: 2
+  completed_plans: 2
 ---
 
 # Project State
@@ -20,15 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects and split PDF preview in v1.1.
-**Current focus:** Milestone **v1.1** — multi-project layout; live PDF preview
+**Current focus:** Phase 04 — multi-project-layout-index
 
 ## Current Position
 
-Phase: Not started (defining requirements complete — roadmap ready)
-Plan: —
-Status: Ready to plan Phase 4
-Last activity: 2026-03-25 — Milestone v1.1 initialized
-CONTEXT: research/SUMMARY.md for LaTeX Workshop + `projects/` layout
+Phase: 5
+Plan: Not started
 
 ## Performance Metrics
 

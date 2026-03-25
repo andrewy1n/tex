@@ -29,7 +29,7 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 3. **Project index** in README and/or `PROJECTS.md` lists each project, master file, and build instructions (from repo root or per project as documented).
 4. **`.gitignore`** and **`AGENTS.md`** explain per-project artifacts (not only root `main.pdf`).
 
-**Plans:** TBD
+**Plans:** 2/2 complete — 2026-03-25
 
 ---
 
@@ -68,5 +68,5 @@ Extend the v1.0 IDE-first LaTeX repo with **multiple independent “projects”*
 | 1. Repository layout & documentation | v1.0 | 3/3 | Complete | 2026-03-25 |
 | 2. Repeatable local build | v1.0 | 2/2 | Complete | 2026-03-25 |
 | 3. Agent & edit conventions | v1.0 | 2/2 | Complete | 2026-03-25 |
-| 4. Multi-project layout & index | v1.1 | 0/TBD | Not started | — |
+| 4. Multi-project layout & index | v1.1 | 2/2 | Complete | 2026-03-25 |
 | 5. Live PDF preview | v1.1 | 0/TBD | Not started | — |

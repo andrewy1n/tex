@@ -8,10 +8,10 @@
 
 ### Multi-project layout
 
-- [ ] **PRJ-01**: The repository defines a **documented convention** for multiple LaTeX projects (e.g. `projects/<project-name>/` each with its own master `.tex`, figures, and bibliography assets as needed).
-- [ ] **PRJ-02**: **Each project builds independently** — running the documented build for one project does not overwrite another project’s PDF/output under normal use (distinct output paths or names are specified).
-- [ ] **PRJ-03**: A **project index** (README section and/or `PROJECTS.md`) lists each project, its **master file**, and **how to build** it from the repo.
-- [ ] **PRJ-04**: **`.gitignore`** and **`AGENTS.md`** (or equivalent docs) describe **per-project** build products (PDF, aux, logs), not only a single root `main.pdf`.
+- [x] **PRJ-01**: The repository defines a **documented convention** for multiple LaTeX projects (e.g. `projects/<project-name>/` each with its own master `.tex`, figures, and bibliography assets as needed). — **Done in Phase 4**
+- [x] **PRJ-02**: **Each project builds independently** — running the documented build for one project does not overwrite another project’s PDF/output under normal use (distinct output paths or names are specified). — **Done in Phase 4**
+- [x] **PRJ-03**: A **project index** (README section and/or `PROJECTS.md`) lists each project, its **master file**, and **how to build** it from the repo. — **Done in Phase 4**
+- [x] **PRJ-04**: **`.gitignore`** and **`AGENTS.md`** (or equivalent docs) describe **per-project** build products (PDF, aux, logs), not only a single root `main.pdf`. — **Done in Phase 4**
 
 ### Live PDF preview (editor)
 
@@ -42,10 +42,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PRJ-01 | 4 | Pending |
-| PRJ-02 | 4 | Pending |
-| PRJ-03 | 4 | Pending |
-| PRJ-04 | 4 | Pending |
+| PRJ-01 | 4 | Complete |
+| PRJ-02 | 4 | Complete |
+| PRJ-03 | 4 | Complete |
+| PRJ-04 | 4 | Complete |
 | PRV-01 | 5 | Pending |
 | PRV-02 | 5 | Pending |
 
@@ -57,4 +57,4 @@
 
 ---
 *Requirements defined: 2026-03-25*  
-*Last updated: 2026-03-25 — milestone v1.1*
+*Last updated: 2026-03-25 — PRJ-01–PRJ-04 validated after Phase 4*

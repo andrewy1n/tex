@@ -32,10 +32,14 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 - [x] Coding agents can read and modify project files as normal workspace files — **Validated in Phase 1**
 - [x] Light, repeatable local build (`.latexmkrc`, `Makefile`, documented `latexmk` in README); no CI requirement in v1 — **Validated in Phase 2: Repeatable local build**
 - [x] Short convention doc for master file + build + edit expectations — **Validated in Phase 3: Agent & edit conventions** (`AGENTS.md`, README/`.cursor/rules` pointers)
+- [x] **Multi-project layout** — `projects/<name>/` with per-project `main.tex`, migrated sample at `projects/sample/` — **Validated in Phase 4: Multi-project layout & index**
+- [x] **Isolated PDF outputs** per project path and ignore rules — **Validated in Phase 4**
+- [x] **Project index** (`PROJECTS.md` + README) with master paths and build lines — **Validated in Phase 4**
+- [x] **Per-project artifact policy** in `.gitignore` and `AGENTS.md` — **Validated in Phase 4**
 
 ### Active
 
-_(None — v1 milestone requirements validated.)_
+- **Live PDF preview** (PRV-01, PRV-02) — Phase 5
 
 ### Out of Scope
 
@@ -58,7 +62,7 @@ Personal or small-team LaTeX workspace. The aim is versioned sources plus editor
 |----------|-----------|---------|
 | Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1: layout + README + `.gitignore`; Phase 2: `.latexmkrc`, `Makefile`, README **Build** |
 | No hosted replacement for Overleaf | Keeps scope to repo + editor + agents | v1.0: editor-first repo + agents; no change |
-| Multi-project directories + LaTeX Workshop PDF tab | User wants Overleaf-like separation and split PDF while editing | v1.1: `projects/` convention + `.vscode` / docs |
+| Multi-project directories + LaTeX Workshop PDF tab | User wants Overleaf-like separation and split PDF while editing | Phase 4: `projects/` + `PROJECTS.md`; Phase 5: `.vscode` / docs |
 
 ## Evolution
 
@@ -80,4 +84,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 — milestone v1.1 initialized (requirements + roadmap)*
+*Last updated: 2026-03-25 — Phase 4 complete; PRJ-01–PRJ-04 validated*
