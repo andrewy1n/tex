@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A git repository for LaTeX (`.tex`) sources and supporting files—organized so you can open and edit any file in Cursor/VS Code and give coding agents direct access to the same tree. Light build hooks (for example Makefile, `latexmk`, or editor tasks) keep local builds repeatable without turning this into a hosted editor.
+A git repository for LaTeX (`.tex`) sources and supporting files—organized so you can open and edit any file in Cursor/VS Code and give coding agents direct access to the same tree. **v1.1** adds **multiple independent project folders** in one repo (local “Overleaf-like” separation) plus **split / tab PDF preview** while editing. Light build hooks (`latexmk`, Make, LaTeX Workshop) keep builds repeatable without a hosted editor.
 
 ## Core Value
 
@@ -12,9 +12,16 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 
 **Shipped:** Milestone **v1.0 — IDE-first LaTeX repo** (2026-03-25): repo layout and onboarding README, TeX-oriented `.gitignore`, one documented `latexmk` / `make pdf` path from the repo root, and **`AGENTS.md`** plus README / **`.cursor/rules`** pointers for humans and coding agents. v1 requirements are archived in [`.planning/milestones/v1.0-REQUIREMENTS.md`](milestones/v1.0-REQUIREMENTS.md).
 
-## Next milestone
+## Current Milestone: v1.1 Multi-project workspace & live PDF
 
-Not started. Use `/gsd-new-milestone` to capture goals and a fresh `.planning/REQUIREMENTS.md`. Candidate themes (from the archived v2 list): optional editor tasks (**EDT-01**), optional lint/format documentation (**QLT-01**), optional CI or devcontainer (**PLT-01**, **PLT-02**) — none of these are committed until you define the next milestone.
+**Goal:** Support **several LaTeX projects in one repo** with clear layout and docs, and **live PDF viewing in a separate editor window/panel** (LaTeX Workshop) while editing sources.
+
+**Target features:**
+
+- **Multi-project layout** — Directory convention (e.g. `projects/<name>/`), isolated PDF/aux outputs, project index, updated ignore rules and `AGENTS.md`.
+- **Live / split PDF preview** — Separate PDF tab or side view; PDF refreshes after build (auto-build on save and/or documented build workflow).
+
+**Key context:** Still **not** a hosted Overleaf replacement; all editing stays in Cursor/VS Code + local TeX. Research: [`.planning/research/SUMMARY.md`](research/SUMMARY.md).
 
 ## Requirements
 
@@ -32,13 +39,13 @@ _(None — v1 milestone requirements validated.)_
 
 ### Out of Scope
 
-- **Overleaf-style hosted web editor or real-time co-authorship** — editor-first; not a web product
+- **Overleaf-style hosted web editor or real-time co-authorship** — editor-first; not a web product (v1.1 **does** allow multiple **local** projects in one git repo)
 - **Mandatory CI/CD for PDF builds** — optional later
 - **Enforcing a specific TeX distribution** — developers use their own local TeX install
 
 ## Context
 
-Personal or small-team LaTeX workspace. The aim is versioned sources plus editor and agent ergonomics, not feature parity with Overleaf.
+Personal or small-team LaTeX workspace. The aim is versioned sources plus editor and agent ergonomics — v1.1 adds multi-project ergonomics and PDF preview, not feature parity with Overleaf’s hosted product.
 
 ## Constraints
 
@@ -51,6 +58,7 @@ Personal or small-team LaTeX workspace. The aim is versioned sources plus editor
 |----------|-----------|---------|
 | Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1: layout + README + `.gitignore`; Phase 2: `.latexmkrc`, `Makefile`, README **Build** |
 | No hosted replacement for Overleaf | Keeps scope to repo + editor + agents | v1.0: editor-first repo + agents; no change |
+| Multi-project directories + LaTeX Workshop PDF tab | User wants Overleaf-like separation and split PDF while editing | v1.1: `projects/` convention + `.vscode` / docs |
 
 ## Evolution
 
@@ -72,4 +80,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after v1.0 milestone archived*
+*Last updated: 2026-03-25 — milestone v1.1 initialized (requirements + roadmap)*
