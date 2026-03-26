@@ -328,7 +328,9 @@ TSWLatexianTemp*
 # --- project overrides (tex workspace) ---
 # Root main.pdf is pdflatex/latexmk output next to main.tex — do not commit (D-04).
 /main.pdf
-# Per-project colocated PDFs (D-26): each projects/<name>/main.pdf is build output.
+# Per-project build directory (PDF + aux + logs from latexmk -outdir).
+projects/**/build/
+# Legacy: PDF next to master (older builds); keep ignored if present.
 projects/**/main.pdf
 # Intentional figure PDFs under each project remain trackable (D-26).
 !projects/**/figures/**/*.pdf

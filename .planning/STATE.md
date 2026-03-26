@@ -64,6 +64,12 @@ None yet.
 
 None yet.
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | (see git) | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
+
 ## Session Continuity
 
 Last session: 2026-03-25T23:59:00.000Z

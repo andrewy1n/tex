@@ -14,6 +14,6 @@ Do not duplicate full command blocks here. For exact `latexmk` / `make` invocati
 
 - Do **not** commit LaTeX auxiliary or log files (for example `.aux`, `.log`, `.out`, `.synctex.gz`) or other generated noise listed in **`.gitignore`**.
 - **Preserve** TeX **`%` line-continuation** usage: do not merge or reflow lines in ways that break intentional continuations.
-- Do **not** commit built PDFs next to project masters, including under **`projects/**/main.pdf`** (for example **`projects/sample/main.pdf`**); those files are build output and are ignored by project policy.
+- Do **not** commit built PDFs or other latexmk output: treat **`projects/<name>/build/`** as the per-project output tree (ignored), and do not commit legacy **`projects/**/main.pdf`** next to a master if present.
 
 For the full ignore list, see **`.gitignore`**.

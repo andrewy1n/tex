@@ -19,10 +19,10 @@ LaTeX projects live under **`projects/<name>/`**, each with its own **`main.tex`
 **Example — `sample` project:**
 
 ```bash
-latexmk -pdf -interaction=nonstopmode -file-line-error projects/sample/main.tex
+latexmk -pdf -interaction=nonstopmode -file-line-error -outdir=projects/sample/build projects/sample/main.tex
 ```
 
-This uses the committed **`.latexmkrc`** for consistent `pdflatex` settings. Output is **`projects/sample/main.pdf`** next to that project’s `main.tex` (ignored by `.gitignore`).
+This uses the committed **`.latexmkrc`** for consistent `pdflatex` settings. Output (PDF, aux, log) goes under **`projects/sample/build/`** (ignored by `.gitignore`), not next to `main.tex`.
 
 If you have `make`, the same recipe is available as:
 
@@ -46,6 +46,7 @@ The following **exact setting keys** appear in committed config and are repeated
 - `latex-workshop.latex.autoBuild.run`
 - `latex-workshop.latex.build.fromWorkspaceFolder`
 - `latex-workshop.latex.search.rootFiles.include`
+- `latex-workshop.latex.outDir` (set to `%DIR%/build` so IDE builds match CLI `latexmk -outdir=…`)
 
 **Auto-build default:** the repo sets `latex-workshop.latex.autoBuild.run` to **`onSave`** (**D-03**). Saving a `.tex` file triggers `latexmk` via the configured recipe; after a successful build, the PDF tab refreshes.
 
@@ -83,6 +84,7 @@ Use the same rule: open the **repository root** in the editor and ensure **`late
 └── projects/
     └── sample/
         ├── main.tex   # compile root for the sample project
+        ├── build/     # PDF + aux from latexmk (gitignored)
         ├── figures/   # images and figure PDFs (source assets)
         ├── bib/
         │   └── references.bib
@@ -92,7 +94,7 @@ Use the same rule: open the **repository root** in the editor and ensure **`late
 ## What we track vs ignore
 
 - **Tracked:** `.tex` sources, `.bib` bibliography files, figure sources (e.g. `.png`, `.eps`, and PDFs under each project’s `figures/` when they are intentional assets).
-- **Ignored:** LaTeX auxiliary files (`.aux`, `.log`, `.out`, `.synctex.gz`, and related patterns from the GitHub TeX baseline), **root** `main.pdf` if produced at the repository root, and **per-project** `main.pdf` files under **`projects/`** (for example `projects/sample/main.pdf`).
+- **Ignored:** LaTeX auxiliary files (`.aux`, `.log`, `.out`, `.synctex.gz`, and related patterns from the GitHub TeX baseline), **root** `main.pdf` if produced at the repository root, each project’s **`projects/<name>/build/`** tree (PDF + build products), and any legacy **`projects/**/main.pdf`** next to a master.
 
 Full pattern details are in `.gitignore` (upstream TeX template plus project overrides).
 </think>
