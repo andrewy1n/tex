@@ -1,0 +1,3 @@
+[submodule "projects/private"]
+	path = projects/private
+	url = git@github.com:andrewy1n/tex-projects.git
