@@ -4,7 +4,7 @@ This file is the primary contract for humans and coding agents working in this r
 
 ## Master / compile root
 
-Each LaTeX project has its own master under **`projects/<name>/main.tex`**. The reference **`sample`** project uses **`projects/sample/main.tex`**. Discover which projects exist via **[PROJECTS.md](PROJECTS.md)** or from user/task context.
+Each LaTeX project has its own master under **`projects/<path>/main.tex`** (path may include segments, e.g. **`projects/private/CV/main.tex`** when a private repo is mounted as a submodule at **`projects/private`**). The reference **`sample`** project uses **`projects/sample/main.tex`**. Discover which projects exist via **[PROJECTS.md](PROJECTS.md)** or from user/task context.
 
 ## Build
 

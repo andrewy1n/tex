@@ -30,7 +30,24 @@ If you have `make`, the same recipe is available as:
 make pdf
 ```
 
-See the **`Makefile`** at the repo root.
+Use **`make pdf PROJECT=<path>`** when the master is **`projects/<path>/main.tex`** (default **`PROJECT=sample`**). See the **`Makefile`** at the repo root.
+
+### Private projects (submodule)
+
+To keep CV, résumé, or other private sources in a **separate Git repository** while using this repo’s **`Makefile`**, **`.latexmkrc`**, and editor settings, add that repository as a submodule at **`projects/private`**:
+
+```bash
+git submodule add <your-private-repo-url> projects/private
+git submodule update --init --recursive
+```
+
+Lay out each LaTeX project under the private repo as **`…/main.tex`** (for example `projects/private/CV/main.tex` after the submodule is present). Build from this repository’s root:
+
+```bash
+make pdf PROJECT=private/CV
+```
+
+Clones that should not fetch private content can omit submodule init; **`projects/private`** stays empty until you add the submodule and have access.
 
 ## Main file (compile root)
 
@@ -82,13 +99,14 @@ Use the same rule: open the **repository root** in the editor and ensure **`late
 │   ├── settings.json  # LaTeX Workshop workspace settings (viewer, build, recipes)
 │   └── extensions.json # recommends James-Yu.latex-workshop
 └── projects/
-    └── sample/
-        ├── main.tex   # compile root for the sample project
-        ├── build/     # PDF + aux from latexmk (gitignored)
-        ├── figures/   # images and figure PDFs (source assets)
-        ├── bib/
-        │   └── references.bib
-        └── sections/  # optional \input / \include partials
+    ├── sample/
+    │   ├── main.tex   # compile root for the sample project
+    │   ├── build/     # PDF + aux from latexmk (gitignored)
+    │   ├── figures/   # images and figure PDFs (source assets)
+    │   ├── bib/
+    │   │   └── references.bib
+    │   └── sections/  # optional \input / \include partials
+    └── private/       # optional git submodule: your private CV / résumé / etc. (not in template-only clones)
 ```
 
 ## What we track vs ignore
