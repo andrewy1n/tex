@@ -69,7 +69,7 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | 5ff4a7f | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
-| 260325-oiw | Add private projects as git submodule (`projects/private`), docs, Makefile vars | 2026-03-26 | — | [260325-oiw-add-private-projects-as-git-submodule-pr](./quick/260325-oiw-add-private-projects-as-git-submodule-pr/) |
+| 260325-oiw | Add private projects as git submodule (`projects/private`), docs, Makefile vars | 2026-03-26 | d973a19 | [260325-oiw-add-private-projects-as-git-submodule-pr](./quick/260325-oiw-add-private-projects-as-git-submodule-pr/) |
 
 ## Session Continuity
 
