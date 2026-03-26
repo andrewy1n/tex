@@ -10,7 +10,11 @@ A git repository for LaTeX (`.tex`) sources and supporting files—organized so 
 
 ## Current state (v1.1)
 
-**Shipped:** Milestone **v1.1 — Multi-project workspace & live PDF** (2026-03-25): `projects/<name>/` layout with **`PROJECTS.md`** index, per-project PDF ignore rules, and committed **`.vscode/`** LaTeX Workshop settings plus README workflow (**PRV-01**, **PRV-02**). v1.0 remains archived in [`.planning/milestones/v1.0-REQUIREMENTS.md`](milestones/v1.0-REQUIREMENTS.md).
+**Shipped:** Milestone **v1.1 — Multi-project workspace & live PDF** (2026-03-26): `projects/<name>/` layout with **`PROJECTS.md`** index, per-project PDF ignore rules, and committed **`.vscode/`** LaTeX Workshop settings plus README workflow (**PRV-01**, **PRV-02**). v1.0 and v1.1 roadmaps and requirements are archived under [`.planning/milestones/`](milestones/).
+
+## Next milestone goals
+
+Not defined yet. Use `/gsd-new-milestone` to capture the next version’s requirements, research, and roadmap. Candidate themes from **Future** in the last requirements doc (now [`.planning/milestones/v1.1-REQUIREMENTS.md`](milestones/v1.1-REQUIREMENTS.md)): optional shared tasks (**EDT-02**), optional **chktex** / **latexindent** (**QLT-01**), optional CI PDF build (**PLT-01**), optional devcontainer (**PLT-02**).
 
 ## Milestone v1.1 (complete)
 
@@ -85,4 +89,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 — Phase 5 complete; PRV-01–PRV-02 validated; v1.1 milestone shipped*
+*Last updated: 2026-03-26 — v1.1 milestone archived; planning pointer for next milestone*

@@ -1,30 +1,30 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: — Multi-project workspace & live PDF
-status: Milestone complete
-stopped_at: Milestone v1.1 complete — Phase 5 executed and verified
-last_updated: "2026-03-25T23:59:00.000Z"
+milestone: pending
+milestone_name: —
+status: Planning next milestone
+stopped_at: v1.1 archived — use /gsd-new-milestone for v1.2+
+last_updated: "2026-03-26T00:10:00.000Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-25)
+See: .planning/PROJECT.md (updated 2026-03-26)
 
 **Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects and split PDF preview in v1.1.
-**Current focus:** Milestone v1.1 complete — no active phase
+**Current focus:** Planning next milestone (`/gsd-new-milestone`)
 
 ## Current Position
 
-Phase: 05 (complete)
-Plan: 05-live-pdf-preview-02 (complete)
+Phase: —
+Plan: —
 
 ## Performance Metrics
 
@@ -72,6 +72,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-25T23:59:00.000Z
-Stopped at: Phase 5 execution complete (`/gsd-execute-phase 5`)
+Last session: 2026-03-26T00:10:00.000Z
+Stopped at: Milestone v1.1 complete (`/gsd-complete-milestone`)
 Resume file: —

@@ -1,5 +1,18 @@
 # Milestones
 
+## v1.1 Multi-project workspace & live PDF (Shipped: 2026-03-26)
+
+**Phases completed:** 2 phases, 4 plans, 10 tasks
+
+**Key accomplishments:**
+
+- Root LaTeX tree moved to `projects/sample/` with per-project `main.pdf` ignores and Makefile targeting `projects/sample/main.tex`.
+- Added `PROJECTS.md` as the canonical index and retargeted `README.md` / `AGENTS.md` for multiple `projects/<name>/main.tex` roots without duplicating full `latexmk` blocks.
+- Committed minimal `.vscode/` with LaTeX Workshop recommendation and workspace settings matching PROJECTS.md `latexmk` flags (tab viewer, onSave, root globs, default recipe).
+- README now documents the full LaTeX Workshop workflow (keys, onSave vs never, `% !TEX root` for partials, SyncTeX optional, WSL/remote + external viewer); Makefile and PROJECTS.md point at `.vscode/`.
+
+---
+
 ## v1.0 IDE-first LaTeX repo (Shipped: 2026-03-25)
 
 **Phases completed:** 3 phases, 7 plans, 14 tasks

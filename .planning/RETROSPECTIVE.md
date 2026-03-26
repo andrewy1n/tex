@@ -39,6 +39,42 @@
 
 ---
 
+## Milestone: v1.1 — Multi-project workspace & live PDF
+
+**Shipped:** 2026-03-26  
+**Phases:** 2 | **Plans:** 4 | **Sessions:** —
+
+### What was built
+
+- `projects/sample/` migration with per-project build outputs and `PROJECTS.md` as the project index.
+- `README.md` / `AGENTS.md` retargeted for multiple masters without duplicating full `latexmk` blocks.
+- Committed `.vscode/` LaTeX Workshop settings (tab PDF, onSave, root globs) aligned with documented builds.
+- README LaTeX Workshop section: keys, onSave vs manual, `% !TEX root`, SyncTeX optional, WSL/remote notes.
+
+### What worked
+
+- Reusing v1.0 patterns: README owns commands; `AGENTS.md` stays policy-level.
+- Phases 4 then 5 respected dependency (project roots before preview docs).
+
+### What was inefficient
+
+- Same constraint as v1.0: some environments lack a local `latexmk`; verification leaned on config and docs.
+
+### Patterns established
+
+- Per-project `build/` output dirs and ignore rules scaled cleanly from single-root v1.0.
+
+### Key lessons
+
+1. Index file (`PROJECTS.md`) plus one sample project makes multi-root discovery obvious for humans and agents.
+2. Committing minimal `.vscode/` removes “works on my machine” friction for PDF tab + refresh.
+
+### Cost observations
+
+- Not tracked for this workspace.
+
+---
+
 ## Cross-Milestone trends
 
 ### Process evolution
@@ -46,3 +82,4 @@
 | Milestone | Phases | Note |
 |-----------|--------|------|
 | v1.0 | 3 | First shipped version; GSD phases 1–3 |
+| v1.1 | 2 | Multi-project layout + live PDF preview (phases 4–5) |
