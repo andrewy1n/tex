@@ -7,7 +7,13 @@
     {
       "name": "latexmk",
       "command": "latexmk",
-      "args": ["-pdf", "-interaction=nonstopmode", "-file-line-error", "%DOC%"],
+      "args": [
+        "-pdf",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
       "env": {}
     }
   ],
