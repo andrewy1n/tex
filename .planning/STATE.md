@@ -68,7 +68,7 @@ None yet.
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | (see git) | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
+| 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | 5ff4a7f | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
 
 ## Session Continuity
 
