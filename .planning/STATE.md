@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
-milestone: pending
-milestone_name: —
-status: Planning next milestone
-stopped_at: v1.1 archived — use /gsd-new-milestone for v1.2+
-last_updated: "2026-03-27T19:35:00.000Z"
+milestone: v1.2
+milestone_name: Quality tooling & templates
+status: Defining requirements
+stopped_at: v1.2 started — defining requirements
+last_updated: "2026-03-27T00:00:00.000Z"
 progress:
   total_phases: 0
   completed_phases: 0
@@ -23,8 +23,10 @@ See: .planning/PROJECT.md (updated 2026-03-26)
 
 ## Current Position
 
-Phase: —
+Phase: Not started (defining requirements)
 Plan: —
+Status: Defining requirements
+Last activity: 2026-03-27 — Milestone v1.2 started
 
 ## Performance Metrics
 
