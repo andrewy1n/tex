@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Quality tooling & templates
-status: Defining requirements
-stopped_at: v1.2 started — defining requirements
+status: Roadmap created
+stopped_at: Roadmap Phase 6–7 created
 last_updated: "2026-03-27T00:00:00.000Z"
 progress:
-  total_phases: 0
+  total_phases: 2
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -16,23 +16,23 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-26)
+See: .planning/PROJECT.md (updated 2026-03-27)
 
-**Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects and split PDF preview in v1.1.
-**Current focus:** Planning next milestone (`/gsd-new-milestone`)
+**Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects (v1.1) and now quality tooling (v1.2).
+**Current focus:** Planning Phase 6: Linting & formatting
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 6 (Linting & formatting)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-27 — Milestone v1.2 started
+Status: Roadmap created, awaiting phase planning
+Last activity: 2026-03-27 — Roadmap created for v1.2 phases 6–7
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 4
+- Total plans completed: 4 (v1.0–v1.1)
 - Average duration: —
 - Total execution time: —
 
@@ -40,7 +40,8 @@ Last activity: 2026-03-27 — Milestone v1.2 started
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| — | — | — | — |
+| 1–3 (v1.0) | 7 | 7 | — |
+| 4–5 (v1.1) | 4 | 4 | — |
 
 **Recent Trend:**
 
@@ -56,11 +57,14 @@ Last activity: 2026-03-27 — Milestone v1.2 started
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- v1.1: Multi-project layout (`projects/<name>/`) + LaTeX Workshop for separate PDF tab and refresh workflow.
+- v1.0: Source-first repo + light build hooks (`.latexmkrc`, `Makefile`)
+- v1.1: Multi-project layout (`projects/<name>/`) + LaTeX Workshop for separate PDF tab
+- v1.2: Quality tooling (linting, formatting, revision tracking) as separate phases from templates
 
 ### Pending Todos
 
-None yet.
+- [ ] Plan Phase 6: Linting & formatting (QLT-01 through QLT-04)
+- [ ] Plan Phase 7: Revision tracking (REV-01 through REV-03)
 
 ### Blockers/Concerns
 
@@ -77,5 +81,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-27T19:35:00.000Z
-Stopped at: Completed quick task 260327-heb: Add Synctex to latexmk pdflatex build
+Stopped at: Roadmap created for v1.2 — quality tooling phases 6–7
 Resume file: —

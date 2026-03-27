@@ -43,20 +43,21 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| QLT-01 | [TBD] | Pending |
-| QLT-02 | [TBD] | Pending |
-| QLT-03 | [TBD] | Pending |
-| QLT-04 | [TBD] | Pending |
-| REV-01 | [TBD] | Pending |
-| REV-02 | [TBD] | Pending |
-| REV-03 | [TBD] | Pending |
+| QLT-01 | 6 | Pending |
+| QLT-02 | 6 | Pending |
+| QLT-03 | 6 | Pending |
+| QLT-04 | 6 | Pending |
+| REV-01 | 7 | Pending |
+| REV-02 | 7 | Pending |
+| REV-03 | 7 | Pending |
 
 **Coverage:**
 
 - v1.2 requirements: 7 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 7
+- Mapped to phases: 7 (Phase 6: 4 requirements, Phase 7: 3 requirements)
+- Unmapped: 0
 
 ---
 
 *Requirements defined: 2026-03-27*
+*Roadmap created: 2026-03-27*
