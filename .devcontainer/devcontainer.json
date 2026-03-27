@@ -5,6 +5,7 @@
     "dockerfile": "Dockerfile"
   },
   "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
@@ -24,7 +25,7 @@
   "capAdd": [],
   "securityOpt": [],
   "init": true,
-  "overrideCommand": false,
+  "overrideCommand": true,
   "onCreateCommand": "",
   "updateContentCommand": "",
   "updateRemoteUserUID": true,

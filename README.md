@@ -85,6 +85,10 @@ Forward and inverse search (click-from-source / click-from-PDF) work when SyncTe
 
 Use the same rule: open the **repository root** in the editor and ensure **`latexmk`** and your TeX programs are on **`PATH`** in that environment. If the internal PDF viewer misbehaves (common in some remote or WSL setups), set `latex-workshop.view.pdf.viewer` to **`external`** and use your system PDF viewer (**D-06**).
 
+### Dev container (Docker)
+
+This repo includes **`.devcontainer/`** (TeX Live, `latexmk`, etc.). Open the **repository root** in Cursor or VS Code, then **Reopen in Container**. The devcontainer pins **`workspaceMount`** to **`${localWorkspaceFolder}`** so the full repo is always bind-mounted at **`/workspace`**, even when the default Dev Containers behavior would otherwise mount only **`.devcontainer/`** (for example if **`git`** is not on the host **`PATH`** when the container starts). After changing **`.devcontainer/devcontainer.json`**, run **Dev Containers: Rebuild Container**. On WSL2, keep the clone under the Linux filesystem (for example **`/home/...`**) for reliable Docker bind mounts.
+
 ## Repository layout
 
 ```

@@ -4,6 +4,12 @@ Resolved debug sessions. Used by `gsd-debugger` to surface known-pattern hypothe
 
 ---
 
+## devcontainer-files-lost-reopen — workspace looks empty after reopen
+- **Date:** 2026-03-27
+- **Error patterns:** dev container, `/workspace` empty, files missing, reopen, rebuild
+- **Root cause:** Dev Containers default bind logic can mount only **`.devcontainer/`** when **host `git` is not on `PATH`**, so the editor shows almost no project files. Fix: set **`workspaceMount`** to **`source=${localWorkspaceFolder},target=/workspace,type=bind`** in **`devcontainer.json`**; open repo root; rebuild container.
+- **Files changed:** `.devcontainer/devcontainer.json`, `README.md` (Dev container section), `.planning/debug/devcontainer-files-lost-reopen.md`
+---
 ## torn-latex-formatter-not-found — VS Code extension referenced in settings doesn't exist
 - **Date:** 2026-03-27
 - **Error patterns:** torn.latex-formatter, marketplace, VS Code, extension not found
