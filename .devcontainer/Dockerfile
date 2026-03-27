@@ -40,8 +40,8 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Create non-root user for development
-RUN useradd -m -s /bin/bash vscode && \
+# Create non-root user for development with explicit UID matching local user
+RUN useradd -m -s /bin/bash -u 1000 vscode && \
     mkdir -p /workspace && \
     chown vscode:vscode /workspace
 
