@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.2
 milestone_name: Quality tooling & templates
-status: Roadmap created
-stopped_at: Roadmap Phase 6–7 created
+status: Complete
+stopped_at: v1.2 shipped — quality tooling (phases 6–7 complete)
 last_updated: "2026-03-27T00:00:00.000Z"
 progress:
   total_phases: 2
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  completed_phases: 2
+  total_plans: 2
+  completed_plans: 2
 ---
 
 # Project State
@@ -23,10 +23,10 @@ See: .planning/PROJECT.md (updated 2026-03-27)
 
 ## Current Position
 
-Phase: 6 (Linting & formatting)
-Plan: —
-Status: Roadmap created, awaiting phase planning
-Last activity: 2026-03-27 — Roadmap created for v1.2 phases 6–7
+Phase: 7 (Revision tracking) — COMPLETE
+Plan: All phases complete
+Status: v1.2 milestone complete
+Last activity: 2026-03-27 — Phases 6–7 implemented and shipped
 
 ## Performance Metrics
 
