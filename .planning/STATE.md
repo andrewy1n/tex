@@ -28,7 +28,7 @@ See: `.planning/PROJECT.md` (updated 2026-03-27)
 Phase: —
 Plan: —
 Status: Between milestones (v1.2 complete)
-Last activity: 2026-03-27 — Quick task 260327-kit: Commit devcontainer fixes (4e5e09e)
+Last activity: 2026-03-27 — Quick task 260327-kzk: Use default ubuntu user in Dockerfile (afdb679)
 
 ## Performance Metrics
 
@@ -83,6 +83,7 @@ None.
 | 260327-ips | Commit LaTeX formatter configuration (switch to LaTeX Workshop for Cursor) | 2026-03-27 | — | [260327-ips-commit-the-latex-formatter-configuration](./quick/260327-ips-commit-the-latex-formatter-configuration/) |
 | 260327-j4h | Add devcontainer with TeX Live + LaTeX tools | 2026-03-27 | b8ced39 | [260327-j4h-add-a-devcontainer](./quick/260327-j4h-add-a-devcontainer-to-this-repo-so-it-s-/) |
 | 260327-kit | Commit the fixes | 2026-03-27 | 4e5e09e | [260327-kit-commit-the-fixes](./quick/260327-kit-commit-the-fixes/) |
+| 260327-kzk | Use default ubuntu UID 1000 user instead of custom vscode user in Dockerfile | 2026-03-27 | afdb679 | [260327-kzk-use-default-ubuntu-uid-1000-user-in-dock](./quick/260327-kzk-use-default-ubuntu-uid-1000-user-in-dock/) |
 
 ## Session Continuity
 
