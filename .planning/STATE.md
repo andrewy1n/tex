@@ -77,9 +77,10 @@ None yet.
 | 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | 5ff4a7f | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
 | 260325-oiw | Add private projects as git submodule (`projects/private`), docs, Makefile vars | 2026-03-26 | d973a19 | [260325-oiw-add-private-projects-as-git-submodule-pr](./quick/260325-oiw-add-private-projects-as-git-submodule-pr/) |
 | 260327-heb | Add Synctex to latexmk pdflatex build | 2026-03-27 | eec689b | [260327-heb-add-synctex-to-latexmk-pdflatex-build](./quick/260327-heb-add-synctex-to-latexmk-pdflatex-build/) |
+| 260327-ips | Commit LaTeX formatter configuration (switch to LaTeX Workshop for Cursor) | 2026-03-27 | — | [260327-ips-commit-the-latex-formatter-configuration](./quick/260327-ips-commit-the-latex-formatter-configuration/) |
 
 ## Session Continuity
 
-Last session: 2026-03-27T19:35:00.000Z
-Stopped at: Roadmap created for v1.2 — quality tooling phases 6–7
+Last session: 2026-03-27T20:30:00.000Z
+Stopped at: Completed quick task 260327-ips — LaTeX formatter configuration for Cursor
 Resume file: —
