@@ -4,7 +4,7 @@ milestone: pending
 milestone_name: —
 status: Planning next milestone
 stopped_at: v1.1 archived — use /gsd-new-milestone for v1.2+
-last_updated: "2026-03-26T00:10:00.000Z"
+last_updated: "2026-03-27T19:35:00.000Z"
 progress:
   total_phases: 0
   completed_phases: 0
@@ -70,9 +70,10 @@ None yet.
 |---|-------------|------|--------|-----------|
 | 001 | Per-project `build/` for latexmk + LaTeX Workshop | 2026-03-25 | 5ff4a7f | [001-per-project-build-dir](./quick/001-per-project-build-dir/) |
 | 260325-oiw | Add private projects as git submodule (`projects/private`), docs, Makefile vars | 2026-03-26 | d973a19 | [260325-oiw-add-private-projects-as-git-submodule-pr](./quick/260325-oiw-add-private-projects-as-git-submodule-pr/) |
+| 260327-heb | Add Synctex to latexmk pdflatex build | 2026-03-27 | eec689b | [260327-heb-add-synctex-to-latexmk-pdflatex-build](./quick/260327-heb-add-synctex-to-latexmk-pdflatex-build/) |
 
 ## Session Continuity
 
-Last session: 2026-03-26T00:39:28.000Z
-Stopped at: Completed quick task 260325-oiw: Add private projects as git submodule (`projects/private`), docs, Makefile vars
+Last session: 2026-03-27T19:35:00.000Z
+Stopped at: Completed quick task 260327-heb: Add Synctex to latexmk pdflatex build
 Resume file: —
