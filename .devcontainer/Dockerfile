@@ -40,23 +40,22 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get install -y --no-install-recommends nodejs \
     && rm -rf /var/lib/apt/lists/*
 
-# Create non-root user for development with explicit UID matching local user
-RUN useradd -m -s /bin/bash -u 1000 vscode && \
-    mkdir -p /workspace && \
-    chown vscode:vscode /workspace
+# Use default ubuntu user (UID 1000) already present in Ubuntu 24.04
+RUN mkdir -p /workspace && \
+    chown ubuntu:ubuntu /workspace
 
-# Allow vscode to fix bind-mount ownership (host files) via postStartCommand only
+# Allow ubuntu to fix bind-mount ownership (host files) via postStartCommand only
 COPY fix-workspace-perms.sh /usr/local/bin/fix-workspace-perms.sh
 RUN chmod +x /usr/local/bin/fix-workspace-perms.sh && \
-    echo 'vscode ALL=(root) NOPASSWD: /usr/local/bin/fix-workspace-perms.sh' \
-      > /etc/sudoers.d/vscode-workspace && \
-    chmod 0440 /etc/sudoers.d/vscode-workspace
+    echo 'ubuntu ALL=(root) NOPASSWD: /usr/local/bin/fix-workspace-perms.sh' \
+      > /etc/sudoers.d/ubuntu-workspace && \
+    chmod 0440 /etc/sudoers.d/ubuntu-workspace
 
 # Set working directory
 WORKDIR /workspace
 
 # Set the default user
-USER vscode
+USER ubuntu
 
 # Verify LaTeX tools are available
 RUN latexmk --version && chktex --version && latexdiff --version && latexindent --version
