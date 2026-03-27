@@ -1,0 +1,42 @@
+{
+  "name": "LaTeX Workspace",
+  "description": "Development container for multi-project LaTeX workspace with TeX Live, latexmk, chktex, latexindent, and latexdiff",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "workspaceFolder": "/workspace",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "James-Yu.latex-workshop",
+        "DavidAnson.vscode-markdownlint"
+      ]
+    }
+  },
+  "postCreateCommand": "latexmk --version && chktex --version && latexindent --version && latexdiff --version",
+  "forwardPorts": [],
+  "remoteEnv": {
+    "WORKSPACE": "/workspace"
+  },
+  "mounts": [],
+  "containerEnv": {},
+  "capAdd": [],
+  "securityOpt": [],
+  "init": true,
+  "overrideCommand": false,
+  "onCreateCommand": "",
+  "updateContentCommand": "",
+  "updateRemoteUserUID": true,
+  "userEnvProbe": "loginInteractiveShell",
+  "features": {},
+  "hostRequirements": {
+    "memory": "4gb",
+    "cpus": 2
+  },
+  "portsAttributes": {},
+  "otherPortsAttributes": {
+    "onAutoForward": "notify"
+  },
+  "shutdownAction": "none"
+}
