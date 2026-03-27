@@ -5,7 +5,7 @@ milestone_name: —
 status: between_milestones
 stopped_at: v1.2 shipped — planning next milestone
 last_updated: "2026-03-27T23:59:59.000Z"
-last_activity: 2026-03-27 — Added devcontainer (260327-j4h)
+last_activity: 2026-03-27 — Quick task 260327-kit: Commit the fixes
 progress:
   total_phases: 0
   completed_phases: 0
@@ -28,7 +28,7 @@ See: `.planning/PROJECT.md` (updated 2026-03-27)
 Phase: —
 Plan: —
 Status: Between milestones (v1.2 complete)
-Last activity: 2026-03-27 — Milestone v1.2 archived
+Last activity: 2026-03-27 — Quick task 260327-kit: Commit devcontainer fixes (4e5e09e)
 
 ## Performance Metrics
 
@@ -82,6 +82,7 @@ None.
 | 260327-heb | Add Synctex to latexmk pdflatex build | 2026-03-27 | eec689b | [260327-heb-add-synctex-to-latexmk-pdflatex-build](./quick/260327-heb-add-synctex-to-latexmk-pdflatex-build/) |
 | 260327-ips | Commit LaTeX formatter configuration (switch to LaTeX Workshop for Cursor) | 2026-03-27 | — | [260327-ips-commit-the-latex-formatter-configuration](./quick/260327-ips-commit-the-latex-formatter-configuration/) |
 | 260327-j4h | Add devcontainer with TeX Live + LaTeX tools | 2026-03-27 | b8ced39 | [260327-j4h-add-a-devcontainer](./quick/260327-j4h-add-a-devcontainer-to-this-repo-so-it-s-/) |
+| 260327-kit | Commit the fixes | 2026-03-27 | 4e5e09e | [260327-kit-commit-the-fixes](./quick/260327-kit-commit-the-fixes/) |
 
 ## Session Continuity
 
