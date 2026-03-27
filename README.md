@@ -164,7 +164,7 @@ This writes the formatted version back to the file (the `-w` flag). The `.latexi
 **Auto-formatting on save:**
 Commit settings in `.vscode/settings.json` enable auto-formatting in VS Code. Saving a `.tex` file automatically applies `latexindent`; no manual invocation needed.
 
-Install the [LaTeX Formatter extension](https://marketplace.visualstudio.com/items?itemName=torn.latex-formatter) for VS Code to enable auto-format on save. After installation, saving any `.tex` file will trigger `latexindent` with the repo's `.latexindent.yaml` configuration.
+Install the [latexindent extension](https://marketplace.visualstudio.com/items?itemName=lenagain.latexindent) for VS Code to enable auto-format on save. After installation, saving any `.tex` file will trigger `latexindent` with the repo's `.latexindent.yaml` configuration.
 
 **Example:** Before (poor indentation):
 ```tex
