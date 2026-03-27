@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     perl \
     python3 \
     openssh-client \
+    sudo \
     wget \
     && rm -rf /var/lib/apt/lists/*
 
@@ -28,13 +29,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     latexmk \
     chktex \
     latexdiff \
+    texlive-extra-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# Install latexindent from CTAN via tlmgr (TeX Live package manager)
-# First ensure tlmgr is available, then install latexindent
-RUN tlmgr init-usertree && \
-    tlmgr update --self --all && \
-    tlmgr install latexindent 2>/dev/null || echo "latexindent may already be installed with texlive-extra"
+# latexindent: use apt (texlive-extra-utils). Ubuntu's TeX Live often does not expose a
+# working tlmgr user install that puts latexindent on PATH for non-root users.
 
 # Install Node.js LTS (for VSCode/Cursor server and future tooling)
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
@@ -46,6 +45,13 @@ RUN useradd -m -s /bin/bash vscode && \
     mkdir -p /workspace && \
     chown vscode:vscode /workspace
 
+# Allow vscode to fix bind-mount ownership (host files) via postStartCommand only
+COPY fix-workspace-perms.sh /usr/local/bin/fix-workspace-perms.sh
+RUN chmod +x /usr/local/bin/fix-workspace-perms.sh && \
+    echo 'vscode ALL=(root) NOPASSWD: /usr/local/bin/fix-workspace-perms.sh' \
+      > /etc/sudoers.d/vscode-workspace && \
+    chmod 0440 /etc/sudoers.d/vscode-workspace
+
 # Set working directory
 WORKDIR /workspace
 
@@ -53,5 +59,4 @@ WORKDIR /workspace
 USER vscode
 
 # Verify LaTeX tools are available
-RUN latexmk --version && chktex --version && latexdiff --version && \
-    (which latexindent > /dev/null || echo "Note: latexindent may not be in PATH but is available via Perl")
+RUN latexmk --version && chktex --version && latexdiff --version && latexindent --version

@@ -16,6 +16,7 @@
     }
   },
   "postCreateCommand": "latexmk --version && chktex --version && latexindent --version && latexdiff --version",
+  "postStartCommand": "sudo /usr/local/bin/fix-workspace-perms.sh",
   "forwardPorts": [],
   "remoteEnv": {
     "WORKSPACE": "/workspace"
