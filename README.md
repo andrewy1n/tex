@@ -183,6 +183,41 @@ After (formatted with `.latexindent.yaml`):
 ```
 
 Works across all projects (`projects/*/`) automatically, since `.latexindent.yaml` is at the repository root.
+
+## Revision Tracking
+
+Compare two LaTeX documents and generate highlighted diff PDFs using **`latexdiff`**.
+
+**Install:**
+```bash
+# Usually bundled with TeX Live; if missing:
+cpan App::Latexdiff       # CPAN
+# or
+brew install latexdiff    # macOS
+```
+
+**Usage:**
+```bash
+make diff SRC=draft-v1.tex CMP=main.tex
+```
+
+This compares `draft-v1.tex` with `main.tex` and generates a diff PDF showing all changes. Inserted text appears highlighted; deleted text appears struck through.
+
+**Make target:**
+The `diff` target accepts `SRC` (source file), `CMP` (comparison file), and optional `PROJECT` (default `sample`). Output PDF goes to `projects/<PROJECT>/build/diff-<timestamp>.pdf`.
+
+**Example workflow:**
+1. Save your current document as `draft-v1.tex`
+2. Make edits to `main.tex`
+3. Run `make diff SRC=draft-v1.tex CMP=main.tex`
+4. Open `projects/sample/build/diff-<timestamp>.pdf` to review all changes at once
+
+**Common use cases:**
+- Before submission: compare your draft with the final version to verify all changes
+- Collaborative review: generate a diff to see exactly what changed since the last version
+- Version tracking: keep version files (e.g., `v1.tex`, `v2.tex`) and compare across them
+
+See [latexdiff documentation](https://www.ctan.org/pkg/latexdiff) for advanced options (e.g., word-level diffs, custom markup).
 </think>
 
 
