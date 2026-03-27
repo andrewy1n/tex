@@ -1,0 +1,56 @@
+# latexindent configuration for LaTeX projects
+# This file is used by latexindent to auto-format .tex files
+# See https://ctan.org/pkg/latexindent for full documentation
+
+# Indentation size (number of spaces)
+indentationDefault: '    '  # 4 spaces
+
+# Environments to have their indentation refined by default
+environments:
+  align: 1
+  align*: 1
+  equation: 1
+  equation*: 1
+  gather: 1
+  gather*: 1
+  multline: 1
+  multline*: 1
+  eqnarray: 1
+  eqnarray*: 1
+  tabular: 1
+  tabularx: 1
+  tabular*: 1
+  array: 1
+  matrix: 1
+  cases: 1
+  split: 1
+  enumerate: 1
+  itemize: 1
+  description: 1
+  figure: 1
+  table: 1
+  center: 1
+  flushleft: 1
+  flushright: 1
+
+# Specify which commands have their arguments indented
+commandCodeBlocks:
+  lstlisting: 1
+  minted: 1
+  verbatim: 1
+
+# Line length (soft limit, used for context awareness)
+maximumLineLength: 120
+
+# Indent parameter lines
+indentPars:
+  - 1
+
+# Remove trailing whitespace
+removeTrailingWhitespace: 1
+
+# Make output file
+makeNewFile: 0
+
+# Backup file extension (empty = no backup)
+backupExtension: ''

@@ -115,6 +115,74 @@ Use the same rule: open the **repository root** in the editor and ensure **`late
 - **Ignored:** LaTeX auxiliary files (`.aux`, `.log`, `.out`, `.synctex.gz`, and related patterns from the GitHub TeX baseline), **root** `main.pdf` if produced at the repository root, each project’s **`projects/<name>/build/`** tree (PDF + build products), and any legacy **`projects/**/main.pdf`** next to a master.
 
 Full pattern details are in `.gitignore` (upstream TeX template plus project overrides).
+
+## Linting
+
+Catch common LaTeX style issues using **`chktex`**.
+
+**Install:**
+```bash
+brew install chktex       # macOS
+# or
+apt-get install chktex    # Debian/Ubuntu
+```
+
+**Usage:**
+```bash
+chktex projects/sample/main.tex
+```
+
+Example output:
+```
+projects/sample/main.tex:5:1:2 (Message) Command `\emph' (and its arguments) should be in its own paragraph.
+projects/sample/main.tex:12:15 (Warning) You should place a `~' before `\ref' for better spacing.
+```
+
+`chktex` is informational—use its output to identify style inconsistencies, unclosed braces, bad spacing around citations, and other common patterns. No auto-fix; review and apply manually.
+
+See [chktex documentation](https://www.ctan.org/pkg/chktex) for full list of checks and configuration.
+
+## Formatting
+
+Auto-format LaTeX files using **`latexindent`** with the committed `.latexindent.yaml` configuration.
+
+**Install:**
+```bash
+# Usually bundled with TeX Live; if missing:
+cpan App::Latexindent     # CPAN
+# or
+brew install latexindent  # macOS
+```
+
+**Manual formatting:**
+```bash
+latexindent -w projects/sample/main.tex
+```
+
+This writes the formatted version back to the file (the `-w` flag). The `.latexindent.yaml` configuration at the repository root controls indentation (4 spaces), alignment of math environments (`align`, `equation`, etc.), and line length.
+
+**Auto-formatting on save:**
+Commit settings in `.vscode/settings.json` enable auto-formatting in VS Code. Saving a `.tex` file automatically applies `latexindent`; no manual invocation needed.
+
+Install the [LaTeX Formatter extension](https://marketplace.visualstudio.com/items?itemName=torn.latex-formatter) for VS Code to enable auto-format on save. After installation, saving any `.tex` file will trigger `latexindent` with the repo's `.latexindent.yaml` configuration.
+
+**Example:** Before (poor indentation):
+```tex
+\begin{align}
+x &= y \\
+z &= w
+\end{align}
+```
+
+After (formatted with `.latexindent.yaml`):
+```tex
+\begin{align}
+    x &= y \\
+    z &= w
+\end{align}
+```
+
+Works across all projects (`projects/*/`) automatically, since `.latexindent.yaml` is at the repository root.
 </think>
 
 

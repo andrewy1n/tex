@@ -24,5 +24,14 @@
       "tools": ["latexmk"]
     }
   ],
-  "latex-workshop.latex.recipe.default": "latexmk (repo)"
+  "latex-workshop.latex.recipe.default": "latexmk (repo)",
+  "editor.defaultFormatter": "torn.latex-formatter",
+  "[latex]": {
+    "editor.defaultFormatter": "torn.latex-formatter",
+    "editor.formatOnSave": true
+  },
+  "[tex]": {
+    "editor.defaultFormatter": "torn.latex-formatter",
+    "editor.formatOnSave": true
+  }
 }
