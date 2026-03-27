@@ -1,38 +1,40 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.2
-milestone_name: Quality tooling & templates
-status: Complete
-stopped_at: v1.2 shipped — quality tooling (phases 6–7 complete)
-last_updated: "2026-03-27T00:00:00.000Z"
+milestone: none
+milestone_name: —
+status: between_milestones
+stopped_at: v1.2 shipped — planning next milestone
+last_updated: "2026-03-27T23:59:59.000Z"
+last_activity: 2026-03-27
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 2
-  completed_plans: 2
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-27)
+See: `.planning/PROJECT.md` (updated 2026-03-27)
 
-**Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects (v1.1) and now quality tooling (v1.2).
-**Current focus:** Planning Phase 6: Linting & formatting
+**Core value:** Any `.tex` in the repo is editable in the IDE and readable/writable by agents, with a simple shared way to compile when you need a PDF — extended with multiple projects (v1.1), live PDF preview, and local lint/format/diff tooling (v1.2).
+
+**Current focus:** Define the next milestone (e.g. template library **TMP-01**) via `/gsd-new-milestone`.
 
 ## Current Position
 
-Phase: 7 (Revision tracking) — COMPLETE
-Plan: All phases complete
-Status: v1.2 milestone complete
-Last activity: 2026-03-27 — Phases 6–7 implemented and shipped
+Phase: —
+Plan: —
+Status: Between milestones (v1.2 complete)
+Last activity: 2026-03-27 — Milestone v1.2 archived
 
 ## Performance Metrics
 
 **Velocity:**
 
-- Total plans completed: 4 (v1.0–v1.1)
+- Total plans completed: —
 - Average duration: —
 - Total execution time: —
 
@@ -42,6 +44,7 @@ Last activity: 2026-03-27 — Phases 6–7 implemented and shipped
 |-------|-------|-------|----------|
 | 1–3 (v1.0) | 7 | 7 | — |
 | 4–5 (v1.1) | 4 | 4 | — |
+| 6–7 (v1.2) | 2 | 2 | — |
 
 **Recent Trend:**
 
@@ -55,20 +58,20 @@ Last activity: 2026-03-27 — Phases 6–7 implemented and shipped
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
+
 Recent decisions affecting current work:
 
 - v1.0: Source-first repo + light build hooks (`.latexmkrc`, `Makefile`)
 - v1.1: Multi-project layout (`projects/<name>/`) + LaTeX Workshop for separate PDF tab
-- v1.2: Quality tooling (linting, formatting, revision tracking) as separate phases from templates
+- v1.2: Optional local `chktex` / `latexindent` / `latexdiff`; Makefile helpers; no CI requirement
 
 ### Pending Todos
 
-- [ ] Plan Phase 6: Linting & formatting (QLT-01 through QLT-04)
-- [ ] Plan Phase 7: Revision tracking (REV-01 through REV-03)
+- [ ] Run `/gsd-new-milestone` to define next version (e.g. templates **TMP-01**)
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ### Quick Tasks Completed
 
@@ -81,6 +84,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-27T20:30:00.000Z
-Stopped at: Completed quick task 260327-ips — LaTeX formatter configuration for Cursor
+Last session: 2026-03-27
+Stopped at: Completed v1.2 milestone archival
 Resume file: —

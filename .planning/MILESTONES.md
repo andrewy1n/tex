@@ -1,5 +1,18 @@
 # Milestones
 
+## v1.2 Quality tooling & templates (Shipped: 2026-03-27)
+
+**Phases completed:** 2 phases, 2 plans
+
+**Key accomplishments:**
+
+- **`chktex` + `latexindent`** — README **Linting** / **Formatting** with install notes, examples, and committed `.latexindent.yaml`; `make format` for manual formatting from repo root.
+- **Editor integration** — `.vscode/settings.json` enables format-on-save for `.tex` (LaTeX Workshop / `latexindent` per project docs).
+- **`latexdiff` workflow** — `make diff SRC=… CMP=…` builds timestamped diff PDFs under `projects/<project>/build/`, with validation for missing inputs.
+- **Revision docs** — README **Revision Tracking** covers install, `make diff`, and common review scenarios.
+
+---
+
 ## v1.1 Multi-project workspace & live PDF (Shipped: 2026-03-26)
 
 **Phases completed:** 2 phases, 4 plans, 10 tasks

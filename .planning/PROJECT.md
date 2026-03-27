@@ -2,77 +2,68 @@
 
 ## What This Is
 
-A git repository for LaTeX (`.tex`) sources and supporting files—organized so you can open and edit any file in Cursor/VS Code and give coding agents direct access to the same tree. **v1.1** adds **multiple independent project folders** in one repo (local “Overleaf-like” separation) plus **split / tab PDF preview** while editing. Light build hooks (`latexmk`, Make, LaTeX Workshop) keep builds repeatable without a hosted editor.
+A git repository for LaTeX (`.tex`) sources and supporting files—organized so you can open and edit any file in Cursor/VS Code and give coding agents direct access to the same tree. **v1.1** adds **multiple independent project folders** in one repo plus **split / tab PDF preview**. **v1.2** adds **local quality tooling**: `chktex`, `latexindent` (with committed config and editor integration), and a **`latexdiff`-based revision** workflow via Make. Light build hooks (`latexmk`, Make, LaTeX Workshop) keep builds repeatable without a hosted editor.
 
 ## Core Value
 
 **Any `.tex` in the repo is editable in the IDE and readable/writable by agents**, with a simple, shared way to compile when you need a PDF.
 
-## Current state (v1.1)
+## Current state (v1.2)
 
-**Shipped:** Milestone **v1.1 — Multi-project workspace & live PDF** (2026-03-26): `projects/<name>/` layout with **`PROJECTS.md`** index, per-project PDF ignore rules, and committed **`.vscode/`** LaTeX Workshop settings plus README workflow (**PRV-01**, **PRV-02**). v1.0 and v1.1 roadmaps and requirements are archived under [`.planning/milestones/`](milestones/).
+**Shipped:** Milestone **v1.2 — Quality tooling & templates** (2026-03-27): Phases **6–7** delivered linting/formatting docs and `.latexindent.yaml`, VS Code format-on-save for LaTeX, `make format`, and `make diff` for `latexdiff` PDFs under each project’s `build/`. Roadmap and requirements are archived under [`.planning/milestones/v1.2-ROADMAP.md`](milestones/v1.2-ROADMAP.md) and [`v1.2-REQUIREMENTS.md`](milestones/v1.2-REQUIREMENTS.md).
 
-## Current Milestone: v1.2 Quality tooling & templates
+**Earlier releases:** v1.1 (multi-project + live PDF), v1.0 (IDE-first repo) — see [`.planning/MILESTONES.md`](MILESTONES.md).
 
-**Goal:** Add linting, revision-tracking, and a reusable template library to improve daily LaTeX authoring ergonomics.
+## Next milestone
 
-**Target features:**
-- `chktex` / `latexindent` — linting and auto-formatting, documented and optionally wired into the build
-- `latexdiff` — workflow for tracking changes between document versions (revision cycles)
-- Template library — `templates/` directory with starter documents (CV, paper, letter, etc.)
-
-## Milestone v1.1 (complete)
-
-**Goal:** Support **several LaTeX projects in one repo** with clear layout and docs, and **live PDF viewing in a separate editor window/panel** (LaTeX Workshop) while editing sources.
-
-**Delivered:**
-
-- **Multi-project layout** — Directory convention (`projects/<name>/`), isolated PDF/aux outputs, project index, updated ignore rules and `AGENTS.md`.
-- **Live / split PDF preview** — Separate PDF tab; PDF refreshes after build (`onSave` in committed settings; documented `never` alternative).
-
-**Key context:** Still **not** a hosted Overleaf replacement; all editing stays in Cursor/VS Code + local TeX. Research: [`.planning/research/SUMMARY.md`](research/SUMMARY.md).
+**Not defined.** Strong candidate: **template library** (`templates/` with CV, paper, letter, presentation starters — **TMP-01**), plus optional items from archived “Future” lists (e.g. **EDT-02**, **PLT-01**/**PLT-02**). Use `/gsd-new-milestone` to capture requirements and roadmap.
 
 ## Requirements
 
 ### Validated
 
-- [x] `.tex` sources (and related assets like `.bib`, figures, and class/style files) live in-repo with a layout that is easy to navigate — **Validated in Phase 1: Repository layout & documentation**
-- [x] You can open and edit any `.tex` file in Cursor/VS Code without leaving the repo — **Validated in Phase 1**
-- [x] Coding agents can read and modify project files as normal workspace files — **Validated in Phase 1**
-- [x] Light, repeatable local build (`.latexmkrc`, `Makefile`, documented `latexmk` in README); no CI requirement in v1 — **Validated in Phase 2: Repeatable local build**
-- [x] Short convention doc for master file + build + edit expectations — **Validated in Phase 3: Agent & edit conventions** (`AGENTS.md`, README/`.cursor/rules` pointers)
-- [x] **Multi-project layout** — `projects/<name>/` with per-project `main.tex`, migrated sample at `projects/sample/` — **Validated in Phase 4: Multi-project layout & index**
-- [x] **Isolated PDF outputs** per project path and ignore rules — **Validated in Phase 4**
-- [x] **Project index** (`PROJECTS.md` + README) with master paths and build lines — **Validated in Phase 4**
-- [x] **Per-project artifact policy** in `.gitignore` and `AGENTS.md` — **Validated in Phase 4**
-- [x] **Committed + documented LaTeX Workshop PDF preview** (tab viewer, onSave / manual build, `% !TEX root` for partials, WSL/remote notes) — **Validated in Phase 5: Live PDF preview**
+- [x] `.tex` sources (and related assets like `.bib`, figures, and class/style files) live in-repo with a layout that is easy to navigate — **Phase 1**
+- [x] You can open and edit any `.tex` file in Cursor/VS Code without leaving the repo — **Phase 1**
+- [x] Coding agents can read and modify project files as normal workspace files — **Phase 1**
+- [x] Light, repeatable local build (`.latexmkrc`, `Makefile`, documented `latexmk` in README); no CI requirement in v1 — **Phase 2**
+- [x] Short convention doc for master file + build + edit expectations — **Phase 3** (`AGENTS.md`, README / `.cursor/rules` pointers)
+- [x] **Multi-project layout** — `projects/<name>/` with per-project `main.tex`, sample at `projects/sample/` — **Phase 4**
+- [x] **Isolated PDF outputs** per project path and ignore rules — **Phase 4**
+- [x] **Project index** (`PROJECTS.md` + README) with master paths and build lines — **Phase 4**
+- [x] **Per-project artifact policy** in `.gitignore` and `AGENTS.md` — **Phase 4**
+- [x] **Committed + documented LaTeX Workshop PDF preview** (tab viewer, onSave / manual build, `% !TEX root` for partials, WSL/remote notes) — **Phase 5**
+- [x] **QLT-01–QLT-04** — `chktex` + `latexindent` documented and configured; format-on-save; `.latexindent.yaml` — **Phase 6**
+- [x] **REV-01–REV-03** — `latexdiff` via `make diff`; README revision workflow — **Phase 7**
 
 ### Active
 
-- None (v1.1 requirements complete)
+- [ ] **TMP-01** — Reusable template library (`templates/` directory) with CV, paper, letter, and presentation starters *(candidate next milestone)*
 
 ### Out of Scope
 
-- **Overleaf-style hosted web editor or real-time co-authorship** — editor-first; not a web product (v1.1 **does** allow multiple **local** projects in one git repo)
-- **Mandatory CI/CD for PDF builds** — optional later
+- **Overleaf-style hosted web editor or real-time co-authorship** — editor-first; v1.1 allows multiple **local** projects in one git repo
+- **Mandatory CI/CD for PDF builds** — optional later (**PLT-01**)
 - **Enforcing a specific TeX distribution** — developers use their own local TeX install
+- **Mandatory lint/format enforcement** — tools are optional; documented in v1.2
 
 ## Context
 
-Personal or small-team LaTeX workspace. The aim is versioned sources plus editor and agent ergonomics — v1.1 adds multi-project ergonomics and PDF preview, not feature parity with Overleaf’s hosted product.
+Personal or small-team LaTeX workspace: versioned sources, editor and agent ergonomics, multiple project roots, PDF preview, and local lint/format/diff helpers — not feature parity with Overleaf’s hosted product.
 
 ## Constraints
 
 - **Editor**: Cursor/VS Code — assume normal file-based editing
-- **Build**: Local TeX toolchain (`latexmk`, `pdflatex`, etc.) on the machine
+- **Build**: Local TeX toolchain (`latexmk`, `pdflatex`, `chktex`, `latexindent`, `latexdiff`, etc.) on the machine
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1: layout + README + `.gitignore`; Phase 2: `.latexmkrc`, `Makefile`, README **Build** |
-| No hosted replacement for Overleaf | Keeps scope to repo + editor + agents | v1.0: editor-first repo + agents; no change |
-| Multi-project directories + LaTeX Workshop PDF tab | User wants Overleaf-like separation and split PDF while editing | Phase 4: `projects/` + `PROJECTS.md`; Phase 5: `.vscode` / docs |
+| Source-first repo plus light build hooks | Matches “like Overleaf” as project storage while staying in the IDE | Phase 1–2: layout, `.latexmkrc`, `Makefile`, README **Build** |
+| No hosted replacement for Overleaf | Keeps scope to repo + editor + agents | Unchanged |
+| Multi-project directories + LaTeX Workshop PDF tab | Separation of projects + split PDF while editing | Phase 4–5: `projects/` + `PROJECTS.md` + `.vscode` |
+| v1.2 quality tooling optional and local | No CI gate; users choose whether to run `chktex` / format / `latexdiff` | Phase 6–7: README + Makefile + `.latexindent.yaml`; diff PDFs in `build/` |
+| File-on-disk `latexdiff` first | Simple, explicit comparison before any git-based automation | `make diff SRC=… CMP=…`; git-based diff deferred |
 
 ## Evolution
 
@@ -94,4 +85,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-27 — v1.2 milestone started*
+*Last updated: 2026-03-27 after v1.2 milestone completion*

@@ -75,6 +75,42 @@
 
 ---
 
+## Milestone: v1.2 — Quality tooling & templates
+
+**Shipped:** 2026-03-27  
+**Phases:** 2 | **Plans:** 2 | **Sessions:** —
+
+### What was built
+
+- README **Linting** and **Formatting** for `chktex` and `latexindent` with committed `.latexindent.yaml` and `make format`.
+- VS Code / LaTeX Workshop settings for format-on-save on `.tex` files (aligned with project formatter config).
+- README **Revision Tracking** and `make diff SRC=… CMP=…` producing timestamped diff PDFs under each project `build/`.
+- Makefile guardrails for missing `SRC`/`CMP` paths.
+
+### What worked
+
+- Keeping tools optional and documentation-first matches small-repo contributor expectations.
+- One root `.latexindent.yaml` shared across `projects/*/` keeps formatting consistent.
+
+### What was inefficient
+
+- Marketplace / Cursor differences for LaTeX formatters required a follow-up quick task (LaTeX Workshop–native `latexindent`).
+
+### Patterns established
+
+- **Makefile as thin wrapper** — `format` and `diff` targets document the “blessed” commands next to `pdf`.
+
+### Key lessons
+
+1. Ship docs and repo config first; CI and pre-commit hooks can follow as optional layers.
+2. Archive requirements with checked traceability so milestone closure does not leave stale `[ ]` boxes.
+
+### Cost observations
+
+- Not tracked for this workspace.
+
+---
+
 ## Cross-Milestone trends
 
 ### Process evolution
@@ -83,3 +119,4 @@
 |-----------|--------|------|
 | v1.0 | 3 | First shipped version; GSD phases 1–3 |
 | v1.1 | 2 | Multi-project layout + live PDF preview (phases 4–5) |
+| v1.2 | 2 | Linting, formatting, `latexdiff` workflow (phases 6–7) |
