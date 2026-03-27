@@ -25,13 +25,14 @@
     }
   ],
   "latex-workshop.latex.recipe.default": "latexmk (repo)",
-  "editor.defaultFormatter": "lenagain.latexindent",
+  "latex-workshop.latexFormatter": "latexindent",
+  "latex-workshop.latexFormatterArgs": ["-m", "-l", ".latexindent.yaml"],
   "[latex]": {
-    "editor.defaultFormatter": "lenagain.latexindent",
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
   },
   "[tex]": {
-    "editor.defaultFormatter": "lenagain.latexindent",
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
     "editor.formatOnSave": true
   }
 }
