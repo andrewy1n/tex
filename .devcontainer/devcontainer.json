@@ -6,7 +6,7 @@
   },
   "workspaceFolder": "/workspace",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-  "remoteUser": "vscode",
+  "remoteUser": "ubuntu",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,7 +16,6 @@
     }
   },
   "postCreateCommand": "latexmk --version && chktex --version && latexindent --version && latexdiff --version",
-  "postStartCommand": "sudo /usr/local/bin/fix-workspace-perms.sh",
   "forwardPorts": [],
   "remoteEnv": {
     "WORKSPACE": "/workspace"

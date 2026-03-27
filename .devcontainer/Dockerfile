@@ -44,13 +44,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
 RUN mkdir -p /workspace && \
     chown ubuntu:ubuntu /workspace
 
-# Allow ubuntu to fix bind-mount ownership (host files) via postStartCommand only
-COPY fix-workspace-perms.sh /usr/local/bin/fix-workspace-perms.sh
-RUN chmod +x /usr/local/bin/fix-workspace-perms.sh && \
-    echo 'ubuntu ALL=(root) NOPASSWD: /usr/local/bin/fix-workspace-perms.sh' \
-      > /etc/sudoers.d/ubuntu-workspace && \
-    chmod 0440 /etc/sudoers.d/ubuntu-workspace
-
 # Set working directory
 WORKDIR /workspace
 
